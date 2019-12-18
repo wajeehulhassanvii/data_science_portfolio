@@ -1,9 +1,3 @@
-Tree - 19th Dec 2019
-
-to convert to markdown, example:
-import shutil
-shutil.copyfile("testcopy.txt", "testcopy.md")
-
 ├── analytics
 ├── aws
 ├── books
