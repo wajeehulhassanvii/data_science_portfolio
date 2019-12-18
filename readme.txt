@@ -1,5 +1,4 @@
-Tree structure updated - 19 Dec 2019
-
+tree updated - 19th dec 2019
 ├── analytics
 ├── aws
 ├── books
@@ -7,20 +6,22 @@ Tree structure updated - 19 Dec 2019
 │   └── micro
 │       ├── DATAFRAME AS A DICTIONARY.ipynb
 │       ├── Handlling Missing Data.ipynb
+│       ├── Hierarchical Indexing.ipynb
 │       ├── INDEXERS LOC ILOC AND IX.ipynb
 │       ├── Series and Dictionary.ipynb
 │       ├── testing.ipynb
 │       └── Ufuncs Index Preservation, axis.ipynb
 ├── datasets
-│   └── python_data_science_handbook
-│       ├── BicycleWeather.csv
-│       ├── births.csv
-│       ├── california_cities.csv
-│       ├── president_heights.csv
-│       ├── Seattle2014.csv
-│       ├── state-abbrevs.csv
-│       ├── state-areas.csv
-│       └── state-population.csv
+│   ├── python_data_science_handbook
+│   │   ├── BicycleWeather.csv
+│   │   ├── births.csv
+│   │   ├── california_cities.csv
+│   │   ├── president_heights.csv
+│   │   ├── Seattle2014.csv
+│   │   ├── state-abbrevs.csv
+│   │   ├── state-areas.csv
+│   │   └── state-population.csv
+│   └── python_for_data_analysis_2nd_edition
 ├── deep learning
 ├── images
 ├── kaggle
@@ -39,6 +40,9 @@ Tree structure updated - 19 Dec 2019
 ├── numpy
 ├── python
 │   └── diff bw ast args and  ast ast kargs.txt
+├── readme.txt
 ├── scikit-learn
 ├── scipy
 └── spark
+
+20 directories, 25 files
