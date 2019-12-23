@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it...</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it...</h1>
+
+    </header>
+
+    <article>
+
+      <p>Let's start our journey. This process should be straightforward and I hope you have some Linux experience. We are going to use CLI. We can choose from Ubuntu, <strong>Red Hat Enterprise Linux</strong> (<strong>RHEL</strong>), CentOS 7, Amazon Linux 2, and Oracle Linux. You should check with the documentation before installing in order to use the last available version of Linux that supports Tableau.</p>
+
+      <p>For our purpose we will use RHEL, but you can choose any other Linux distribution. Let's do it:</p>
+
+      <ol>
+
+        <li style="font-weight: 400">Log in to AWS and go to the EC2 dashboard. In the previous recipe, we created VPC and a security group that we will use for this recipe as well.</li>
+
+        <li style="font-weight: 400">Now, we need to launch EC2 with RHEL 7. Go to the Amazon EC2 Console and under <span class="packt_screen">Create Instance</span>, click on <span class="packt_screen">Launch Instance</span>.</li>
+
+        <li style="font-weight: 400">Select an <strong>Amazon Machine Image</strong> (<strong>AMI</strong>) that will meet your performance requirements. In our case, I will use <kbd>m4.xlarge</kbd>. It has 16 GB RAM and it should be enough for learning purposes. You can refer to Tableau recommendation documentation at <a href="https://onlinehelp.tableau.com/current/server-linux/en-us/ts_aws_virtual_machine_selection.htm">https://onlinehelp.tableau.com/current/server-linux/en-us/ts_aws_virtual_machine_selection.htm</a>. <a href="https://onlinehelp.tableau.com/current/server-linux/en-us/ts_aws_virtual_machine_selection.htm"></a></li>
+
+      </ol>
+
+      <div class="packt_infobox">We should create EC2 in the same region as we created VPC.</div>
+
+      <ol start="4">
+
+        <li style="font-weight: 400">Then we should configure the instance details, as follows:</li>
+
+      </ol>
+
+      <div>
+
+        <table style="border-collapse: collapse;width: 100%" border="1">
+
+          <tbody>
+
+            <tr>
+              <td>
+                <p><span class="packt_screen">Network</span></p>
+              </td>
+              <td>
+                <p><kbd>My_First_VPC</kbd></p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p><span class="packt_screen">Storage Size</span></p>
+              </td>
+              <td>
+                <p><kbd>100 GiB</kbd></p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p><span class="packt_screen">Security Group</span></p>
+              </td>
+              <td>
+                <p><kbd>my_security_group</kbd></p>
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <ol start="5">
+
+        <li>Then click on <span class="packt_screen">Launch</span>. It will allow you to create a key pair or use an existing one. We need this for SSH to our Linux box, where we can download and install Tableau Server.</li>
+
+        <li style="font-weight: 400">Let's create a static Elastic IP for our EC2 instance. We should navigate to the Amazon VPC console, go to <span class="packt_screen">Elastic IP,</span> and click <span class="packt_screen">Allocate new address</span>. Use all settings by default. Then, we need to associate our new Elastic IP with our EC2 instance. As a result, our EC2 instance got new IPs that we will use for connection to the host. You can refer to the following screenshot for clarity:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2516 image-border" src="images/7536e920-25c4-40ca-9989-683615a7daab.png" style="width:84.08em;height:35.33em;" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <p class="mce-root"></p>
+
+      <ol start="7">
+
+        <li style="font-weight: 400">Next, we should SSH to our Linux box. If you are using macOS or Linux, then you can use CLI, but if you are using Windows, you should use Putty. In our case, we are using macOS and will open Terminal. We need to use our private key and execute the following commands:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>cd ~/.ssh</strong><br/><strong>chmod 400 tableaucookbook.pem</strong><br/><strong>ssh -i ~/.ssh/tableaucookbook.pem ec2-user@ec2-54-144-74-211.compute-1.amazonaws.com</strong></pre>
+
+      <p style="padding-left: 60px"><span><span>Here the following commands are elaborated as follows:</span></span></p>
+
+      <ul>
+
+        <li style="font-weight: 400"><kbd>ec2-user</kbd>: This represents the default user</li>
+
+        <li style="font-weight: 400"><kbd>tableaucookbook.pem</kbd>: This is from our key pair</li>
+
+        <li style="font-weight: 400"><kbd>ec2-54-144-74-211.compute-1.amazonaws.com</kbd>: This represents the public DNS of our EC2 instance</li>
+
+      </ul>
+
+      <p style="padding-left: 60px">Now, we can install Tableau Server.</p>
+
+      <ol start="8">
+
+        <li style="font-weight: 400">Let's download the installation file from Tableau Server. We could use the last available version of Tableau Server 2019.x. From the CLI, execute the following commands:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>sudo yum update</strong><br/><strong>sudo yum install wget</strong><br/><strong>wget "https://downloads.tableau.com/esdalt/2018.3.2/tableau-server-&lt;tableau version&gt;.x86_64.rpm"</strong></pre>
+
+      <p style="padding-left: 60px">Here, you replace <kbd>&lt;tableau version&gt;</kbd> in order to specify the version of Tableau Server, for example 2019-1-1.</p>
+
+      <ol start="9">
+
+        <li style="font-weight: 400">Then we can install Tableau Server. Execute the following command:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>sudo yum install tableau-server-&lt;tableau version&gt;.x86_64.rpm</strong></pre>
+
+      <p style="padding-left: 60px">This will install you server very fast, much faster and easier than on the Windows platform!</p>
+
+      <p class="mce-root"></p>
+
+      <p class="mce-root"></p>
+
+      <ol start="10">
+
+        <li style="font-weight: 400">The next step is the same as usual. We should initialize <span><kbd>tsm</kbd></span> and <kbd>accepteula</kbd>, as follows:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>cd /opt/tableau/tableau_server/packages/scripts.&lt;code version&gt;/</strong><br/><strong>sudo ./initialize-tsm --accepteula</strong></pre>
+
+      <p style="padding-left: 60px">It will create the <kbd>tsmadmin</kbd> group for admin authorization, create a Tableau user account, and set permissions. In addition, it will add our Linux <kbd>ec2-user</kbd> to the Tableau security groups <kbd>tableau</kbd> and <kbd>tsmadmin</kbd>. In addition, it initializes a web interface for the GUI and a REST API, and will provide a link to it. But this link will have private IP and we won't be able access it from the internet. We should use a public DNS instead.</p>
+
+      <ol start="11">
+
+        <li style="font-weight: 400">In addition, we should create password for our <kbd>ec2-user</kbd><span>, as follows:</span></li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>sudo passwd ec2-user</strong></pre>
+
+      <p style="padding-left: 60px">The preceding command will prompt us to enter a new password for the user. If you don't know what the admin user is, you can run the following command:</p>
+
+      <pre style="padding-left: 60px"><strong>grep tsmadmin /etc/group</strong><br/><strong>tsmadmin:x:994:ec2-user</strong></pre>
+
+      <p style="padding-left: 60px">We’ve created a password for this user and may use it for authentication.</p>
+
+      <ol start="12">
+
+        <li style="font-weight: 400">Let's activate <span class="packt_screen">Tableau Server Trial</span> and log in to TSM. Before you should re-log in to the EC2<span>, as follows</span>:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>tsm login -u ec2-user</strong><br/><strong>tsm licenses activate -t</strong></pre>
+
+      <ol start="13">
+
+        <li style="font-weight: 400">Next we should register Tableau Server by generating JSON and send it to Tableau. In addition, we will add text editor for Linux: <kbd>nano</kbd><span>, as follows:</span></li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>sudo yum install nano</strong><br/><strong>tsm register --template &gt; /tmp/tableaucookbook.json</strong></pre>
+
+      <p style="padding-left: 60px">Fill the file with your information<span>, as follows</span>:</p>
+
+      <pre style="padding-left: 60px">{<br/> "zip" : "V1R2P5",<br/> "country" : "Canada",<br/> "city" : "Victoria",<br/> "last_name" : "Anoshin",<br/> "industry" : "Dmitry",<br/> "eula" : "yes",<br/> "title" : "Boss",<br/> "phone" : "2508919300",<br/> "company" : "Amazon",<br/> "state" : "BC",<br/> "department" : "Engineering",<br/> "first_name" : "Dmitry",<br/> "email" : "dmitry.anoshin@example.com"<br/> }</pre>
+
+      <ol start="14">
+
+        <li>Then execute the following command:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>tsm register --file /tmp/tableaucookbook.json</strong></pre>
+
+      <p style="padding-left: 60px">You should get the message: <kbd>Registration Complete</kbd>.</p>
+
+      <ol start="15">
+
+        <li style="font-weight: 400">Then we will configure <kbd>Identity Store</kbd> in order to specify the authentication method. We will use the <kbd>local</kbd> authentication. Let's create the script with config<span>, as follows</span>:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>sudo nano /tmp/auth.json</strong><br/><strong>{</strong><br/><strong>"configEntities":{</strong><br/><strong>"identityStore": {</strong><br/><strong>  "_type": "identityStoreType",</strong><br/><strong>  "type": "local"</strong><br/><strong>  }</strong><br/><strong> }</strong><br/><strong>}</strong></pre>
+
+      <ol start="16">
+
+        <li>Then we will import setting to Tableau<span>, as follows</span>:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>tsm settings import -f /tmp/auth.json</strong></pre>
+
+      <p style="padding-left: 60px">If you need any other option, you can check templates here:</p>
+
+      <p style="padding-left: 60px"><a href="https://onlinehelp.tableau.com/current/server-linux/en-us/entity_identity_store.htm">https://onlinehelp.tableau.com/current/server-linux/en-us/entity_identity_store.htm</a><a href="https://onlinehelp.tableau.com/current/server-linux/en-us/entity_identity_store.htm"> </a></p>
+
+      <p style="padding-left: 60px">In addition we can configure SMTP (mail server), SSL, and so on. Moreover, we can use the TSM GUI and enter all these settings much more simply.</p>
+
+      <ol start="17">
+
+        <li style="font-weight: 400">Let's apply changes<span>, as follows</span>:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>tsm pending-changes apply</strong><br/><strong>Starting deployments asynchronous job.</strong><br/><strong>Job id is '1', timeout is 10 minutes.</strong><br/><strong>6% - Retrieving the topology to deploy.</strong><br/><strong>13% - Retrieving the configuration to deploy.</strong><br/><strong>20% - Validating the new topology.</strong><br/><strong>26% - Determining if server needs to be started.</strong><br/><strong>33% - Disabling all services.</strong><br/><strong>40% - Waiting for the services to stop.</strong><br/><strong>46% - Updating nodes to new topology.</strong><br/><strong>53% - Waiting for topology to be applied.</strong><br/><strong>60% - Updating nodes to new configuration.</strong><br/><strong>66% - Disabling all services.</strong><br/><strong>73% - Waiting for the services to stop.</strong><br/><strong>80% - Reconfiguring services.</strong><br/><strong>86% - Waiting for services to reconfigure. </strong><br/><strong>93% - Enabling all services.</strong><br/><strong>100% - Waiting for the services to start.</strong><br/><strong>Successfully deployed nodes with updated configuration and topology version.</strong></pre>
+
+      <ol start="18">
+
+        <li style="font-weight: 400">Then initialize the server by executing the following command line:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>tsm initialize --start-server --request-timeout 1800</strong></pre>
+
+      <p style="padding-left: 60px">This process will take a while.</p>
+
+      <ol start="19">
+
+        <li style="font-weight: 400">The final step is to add initial <kbd>Administrator</kbd> account. We will use <kbd>tabmcd</kbd> for this purpose<span>, as follows</span>:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px"><strong>tabcmd initialuser --server localhost:80 --username 'Administrator'</strong></pre>
+
+      <p style="padding-left: 60px">It will ask for passwords. We should get the following output:</p>
+
+      <pre style="padding-left: 60px"><strong>===== redirecting to http://localhost/auth</strong><br/><strong>===== Signed out</strong><br/><strong>===== Creating new session</strong><br/><strong>===== Server: http://localhost:80</strong><br/><strong>===== Username: Administrator</strong><br/><strong>===== Connecting to the server...</strong><br/><strong>===== Signing in...</strong><br/><strong>===== Succeeded</strong></pre>
+
+      <p style="padding-left: 60px">As a result, we've got the <kbd>Administrator</kbd> account for Tableau Server and we can access it through the web.</p>
+
+      <ol start="20">
+
+        <li style="font-weight: 400">Before moving to another topic, I want to highlight internal system reports for Tableau Server. Click on <span class="packt_screen">Status</span> and scroll down.</li>
+
+      </ol>
+
+      <p>This list of reports is created on top of Tableau Repository based on PostgreSQL. You can learn more about reports here: <a href="https://onlinehelp.tableau.com/current/server/en-us/adminview_bucket.htm">https://onlinehelp.tableau.com/current/server/en-us/adminview_bucket.htm</a><a href="https://onlinehelp.tableau.com/current/server/en-us/adminview_bucket.htm"></a></p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

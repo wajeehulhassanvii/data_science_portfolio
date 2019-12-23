@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it...</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it...</h1>
+
+    </header>
+
+    <article>
+
+      <p><span>In this section, we use UFO sighting data to make</span> S<span>parklines. </span><span>Open the Sparkline packaged workbook to follow along. To follow along, use <kbd>nuforc_events.csv</kbd> and <kbd>Sparklines.twbx</kbd>.</span></p>
+
+      <ol>
+
+        <li>To begin, move the event date to <span class="packt_screen">Columns</span> and shape to <span class="packt_screen">Rows</span>. Because we have several years of data, we're filtering the dataset to 2010-2016 and displaying quarters<span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/d0024bc8-c357-4ee6-a371-bb05f450a8b1.png" />
+
+      </p>
+
+      <div class="packt_infobox">We use the green pill for <span class="packt_screen">QUARTER(Event Date)</span> as opposed to the blue one because, in this scenario, the date is continuous rather than a discrete value. In other words, we want date to appear as a value on an axis rather than a value to be grouped.</div>
+
+      <ol start="2">
+
+        <li>Move the measure to the <span class="packt_screen">Rows</span> shelf. For this dataset, we are using the number of records<span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/358ab226-3ad0-442c-a5b1-1a08b296cccd.png" />
+
+      </p>
+
+      <ol start="3">
+
+        <li>Create a measure called <span class="packt_screen">Last Value</span> to indicate the final value in the Sparkline<span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/91c838b8-0ed2-468f-8c20-78b7fd3af6cf.png" />
+
+      </p>
+
+      <ol start="4">
+
+        <li>Move <span class="packt_screen">Last Value</span> to the <span class="packt_screen">Rows</span> shelf<span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/0ed86484-8cd5-40cd-86a0-e644ad018749.png" />
+
+      </p>
+
+      <ol start="5">
+
+        <li>Right-click on <span class="packt_screen">Last Value</span> and select <span class="packt_screen">Dual Axis</span><span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/3725e09e-d912-4b97-a6fb-0424960f7a4b.png" style="width:22.50em;height:26.75em;" />
+
+      </p>
+
+      <ol start="6">
+
+        <li>Right-click on the axis in the visualization and choose <span class="packt_screen">Synchronize Axis</span><span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/19b2cebf-3ec3-4e1c-b933-4b69130b0f9c.png" style="width:13.92em;height:19.08em;" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <ol start="7">
+
+        <li>Edit the axis by deselecting the <span class="packt_screen">Include Zero</span> option and choosing the <span class="packt_screen">Independent axis ranges for each row or column</span> radio button<span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/3f623d6f-a205-4dd1-9c99-88f20cc1e6c0.png" />
+
+      </p>
+
+      <ol start="8">
+
+        <li>Remove all the headers by right-clicking on the visualization where each red x is located and deselecting <span class="packt_screen">Show Header</span><span><span>, as follows:</span></span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/bd471546-062c-4772-91fa-bb87211da763.png" />
+
+      </p>
+
+      <ol start="9">
+
+        <li>Fit the height<span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/53fc2b66-01a8-4898-bbae-7165a5e35c69.png" style="width:7.92em;height:8.00em;" />
+
+      </p>
+
+      <ol start="10">
+
+        <li>Manually resize the width by dragging the column ending inward<span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/3027b23c-8da6-4800-bdcf-8ddf052dd3ab.png" style="width:32.42em;height:11.08em;" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <ol start="11">
+
+        <li>Remove all grid lines. From <span class="packt_screen">Format Borders</span>, choose <span class="packt_screen">Sheet</span>, and set <span class="packt_screen">Column Divider</span> and <span class="packt_screen">Row Divider Pane</span> to <span class="packt_screen">None</span><span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/549d1fa2-e56b-4508-9793-836f266615f1.png" style="width:12.75em;height:41.42em;" />
+
+      </p>
+
+      <ol start="12">
+
+        <li>From <span class="packt_screen">Format Lines</span>, choose <span class="packt_screen">Rows</span>, and set <span class="packt_screen">Grid Lines</span> and <span class="packt_screen">Zero Lines</span> to <span class="packt_screen">None</span><span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/0b9a661d-1ace-4f80-a5bf-4346a30c4367.png" style="width:15.42em;height:25.17em;" />
+
+      </p>
+
+      <ol start="13">
+
+        <li>Exclude null shapes by dragging <span class="packt_screen">Shape</span> to the <span class="packt_screen">Filters</span> card and select <span class="packt_screen">Null</span> and <span class="packt_screen">Exclude</span><span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/ca0e2564-9fb3-4905-854f-94234e8f26a1.png" style="width:27.92em;height:37.83em;" />
+
+      </p>
+
+      <ol start="14">
+
+        <li>The Sparkline chart should appear as follows:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/23aaf41d-25ff-4222-9567-e4e7ad9832c3.png" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

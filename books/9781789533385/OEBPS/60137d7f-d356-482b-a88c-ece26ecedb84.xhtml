@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it...</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it...</h1>
+
+    </header>
+
+    <article>
+
+      <p>It depends on your preferences. In my example, I will use EMR CLI. We should <span>already</span><span> </span><span>be connected to the EMR cluster via SSH. Let's start to work with Hive:</span></p>
+
+      <ol>
+
+        <li>In EMR CLI type <kbd>hive</kbd> and it will launch Hive.</li>
+
+        <li>Next, we can execute SQL commands. Let's create the table on top of the CloudFront logs that are stored in the S3 bucket. We will run this DDL<span>, as follows</span>:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px;">hive&gt;CREATE EXTERNAL TABLE IF NOT EXISTS cloudfront_logs (<br/>  DateObject Date,<br/>  Time STRING,<br/>  Location STRING,<br/>  Bytes INT,<br/>  RequestIP STRING,<br/>  Method STRING,<br/>  Host STRING,<br/>  Uri STRING,<br/>  Status INT,<br/>  Referrer STRING,<br/>  OS String,<br/>  Browser String, <br/>  BrowserVersion String<br/>)<br/>ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'<br/>WITH SERDEPROPERTIES (<br/>  "input.regex" = "^(?!#)([^ ]+)\\s+([^ ]+)\\s+([^ ]+)\\s+([^ ]+)\\s+([^ ]+)\\s+([^ ]+)\\s+([^ ]+)\\s+([^ ]+)\\s+([^ ]+)\\s+([^ ]+)\\s+[^\(]+[\(]([^\;]+).*\%20([^\/]+)[\/](.*)$"<br/>) LOCATION 's3://us-east-1.elasticmapreduce.samples/cloudfront/data';</pre>
+
+      <p class="mce-root"></p>
+
+      <p class="mce-root"></p>
+
+      <div class="packt_infobox">It is important that region location is in the same region as where we have the EMR cluster, that is in my case it is <kbd>us-east-1</kbd>.</div>
+
+      <ol start="3">
+
+        <li>
+
+          <p>We can test our new table, by running the following simple query:</p>
+
+        </li>
+
+      </ol>
+
+      <pre style="padding-left: 60px;">Hive&gt;SELECT os, COUNT(*) count FROM cloudfront_logs GROUP BY os;</pre>
+
+      <p style="padding-left: 90px;">Let's look at the results in the following screenshot:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1932 image-border" src="images/587c7145-67e4-4909-9588-efff86c7b5a8.png" style="width:56.00em;height:28.42em;" />
+
+      </p>
+
+      <p style="padding-left: 60px;">You can see that the query works. Despite the fact that it has a fairly small amount of data, the query took 32 seconds. This is how Hadoop works, it takes a long time for initialization and other complementary steps. This is true for any big data system and should work for big data. You can also experiment with other SQL-friendly Hadoop tools, such as Impala, Presto, and so on. For us, the main feature of these guys is their connection to the Tableau via the ODBC driver.</p>
+
+      <p class="mce-root"></p>
+
+      <ol start="4">
+
+        <li>
+
+          <p>Let's create one more table, using the <em>Google Books N-grams</em> dataset. It is an AWS public dataset available for everyone. You can read more about it here: <a href="https://registry.opendata.aws/google-ngrams/">https://registry.opendata.aws/google-ngrams/</a>. Let's create the Hive table for 1-gram, as follows:</p>
+
+        </li>
+
+      </ol>
+
+      <pre style="padding-left: 60px;">hive&gt; CREATE EXTERNAL TABLE eng_1M_1gram(token STRING, year INT, frequency INT, pages   <br/> INT, books INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY 't' STORED AS SEQUENCEFILE   <br/>  LOCATION 's3://datasets.elasticmapreduce/ngrams/books/20090715/eng-1M/1gram';</pre>
+
+      <p>As a result, we will get one more table. This table has 261,823,186 rows.</p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

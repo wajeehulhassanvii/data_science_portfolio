@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it…</h1>
+
+    </header>
+
+    <article>
+
+      <ol>
+
+        <li>In the <span class="packt_screen">Data</span> pane, click on the black arrow to the right of the <span class="packt_screen">Dimensions</span> tab and select <span class="packt_screen">Create Parameter</span><span class="packt_screen">…</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/5f58c190-1164-480c-95b2-e5545d7b5ad1.png" style="width:16.25em;height:11.83em;" />
+
+      </p>
+
+      <ol start="2">
+
+        <li>In the <span class="packt_screen">Create Parameter</span> window, change the name of the parameter from <span class="packt_screen">Parameter 1</span> to <kbd>Average employment cut-off</kbd>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/55d32b53-a3c6-4a8b-92ae-e2d9329cf906.png" style="width:42.75em;height:21.17em;" />
+
+      </p>
+
+      <ol start="3">
+
+        <li>Leave all the other settings as they are, and click <span class="packt_screen">OK</span> to exit the window. A new section, <span class="packt_screen">Parameters</span>, will appear in the <span class="packt_screen">Data</span> pane, beneath <span class="packt_screen">Measures</span>. It will contain our new parameter, <span class="packt_screen">Average employment cut-off</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1337 image-border" src="images/333456fe-3960-4d04-9cbc-f73b3f5a454a.png" style="width:17.00em;height:4.50em;" />
+
+      </p>
+
+      <ol start="4">
+
+        <li>Right-click on the <span class="packt_screen">Average Employment cut-off</span> parameter under <span class="packt_screen">Parameters</span> and select <span class="packt_screen">Show Parameter Control</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/990c411b-5f02-4a94-9484-60ea0be473ac.png" style="width:23.08em;height:27.92em;" />
+
+      </p>
+
+      <p style="padding-left: 90px">The parameter control card will appear in the top-right corner of the workspace. Notice that it shows the value we have set as the current value when creating it, which is <kbd>1</kbd>:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1338 image-border" src="images/31a030ee-e424-473d-a498-15603c7bcf8f.png" style="width:13.17em;height:4.25em;" />
+
+      </p>
+
+      <ol start="5">
+
+        <li>We have created the parameter. Now, let's create the set we will use it with. Right-click on the <span class="packt_screen">Year</span> pill under <span class="packt_screen">Dimensions</span>, and navigate to <span class="packt_screen">Create</span> | <span class="packt_screen">Set…</span>.</li>
+
+        <li>In the <span class="packt_screen">Create Set</span> window, change the name of the set from <span class="packt_screen">Set 1</span> to <kbd>Above cut-off employment</kbd>.</li>
+
+        <li>Switch from the <span class="packt_screen">General</span> tab to the <span class="packt_screen">Condition</span> tab, and select <span class="packt_screen">By formula</span>.</li>
+
+      </ol>
+
+      <ol start="8">
+
+        <li>In the formula space, type the <kbd>AVG([Employment])&gt;[Average employment cut-off]</kbd> expression as shown in the following screenshot:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/62551b0c-3439-436a-875e-97cc8cc3527d.png" style="width:31.67em;height:41.08em;" />
+
+      </p>
+
+      <ol start="9">
+
+        <li>When you are done, click <span class="packt_screen">OK</span> to close the window. Our set, <span class="packt_screen">Above cut-off employment</span>, has now appeared together with a new <span class="packt_screen">Set</span> section in the <span class="packt_screen">Data</span> pane.</li>
+
+        <li>Finally, let's make a visualization using the new set. Drag and drop <span class="packt_screen">Year</span> from <span class="packt_screen">Dimensions</span> into the <span class="packt_screen">Columns</span> shelf.</li>
+
+        <li>Right-click on the<span> </span><span class="packt_screen">Year</span><span> </span>pill in the<span> </span><span class="packt_screen">Columns</span><span> </span>shelf, and in the drop-down menu switch to<span> </span><span class="packt_screen">Discrete</span>.</li>
+
+      </ol>
+
+      <ol start="12">
+
+        <li>Drag and drop <span class="packt_screen">Employment</span> <span>from</span> <span class="packt_screen">Measures </span><span>into the</span> <span class="packt_screen">Rows</span> <span>shelf.</span></li>
+
+      </ol>
+
+      <div class="packt_infobox">Although we have used average employment as the aggregation function when creating our set, we can leave the <span class="packt_screen">SUM</span> aggregation function in our view. The two are unrelated, since the function in the set is used to define the set, and is not related to the measures we might use in our view.</div>
+
+      <ol start="13">
+
+        <li>Drag and drop the <span class="packt_screen">Above cut-off employment</span> set from <span class="packt_screen">Sets</span> onto <span class="packt_screen">Color</span> in the <span class="packt_screen">Marks</span> card.</li>
+
+        <li>All our bars are colored as <span class="packt_screen">In</span> set, because the <span class="packt_screen">Average employment cut-off</span> parameter's value is set to <kbd>1</kbd>. In the parameter control card, try changing the value to <kbd>300000</kbd>.</li>
+
+        <li>Try changing the value a couple of more times, to see how the years that are in/out of the set change with the parameter value:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/48926ec5-57c5-4e8f-a53b-7e5d498821c9.png" style="width:72.58em;height:37.83em;" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

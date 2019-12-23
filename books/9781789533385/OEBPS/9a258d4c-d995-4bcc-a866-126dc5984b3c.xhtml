@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it…</h1>
+
+    </header>
+
+    <article>
+
+      <ol>
+
+        <li>Launch R and open a new script by selecting <span class="packt_screen">File</span> and then <span class="packt_screen">New script</span>.</li>
+
+        <li>In the <span class="packt_screen">R Editor</span> window, enter the following code and make sure to replace all of the file paths with the paths leading to the appropriate locations on your device. After pasting the paths, make sure to replace the backslashes with double backslashes, as seen in the following code:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px">pt &lt;-read.table ("C:\\Users\\Slaven\\Desktop\\personality_ traits.csv", header=T, sep=",")<br/>pt.pc &lt;- prcomp(pt, scale = TRUE)<br/>X1 &lt;- pt.pc$x [, 1]<br/>X2 &lt;- pt.pc$x [, 2]<br/>X3 &lt;- pt.pc$x [, 3]<br/>X4 &lt;- pt.pc$x [, 4]<br/>X5 &lt;- pt.pc$x [, 5]<br/>scores &lt;- cbind(pt, X1, X2, X3, X4, X5) <br/>colnames(scores)[17] &lt;- "X1"<br/>colnames(scores)[18] &lt;- "X2"<br/>colnames(scores)[19] &lt;- "X3"<br/>colnames(scores)[20] &lt;- "X4"<br/>colnames(scores)[21] &lt;- "X5"<br/>write.csv (scores, "C:\\Users\\Slaven\\Desktop\\scores.csv")<br/>loadings &lt;- as.data.frame(pt.pc$rotation)<br/>loadings &lt;- loadings[2:16, 1:5]<br/>loadings$trait &lt;- row.names(loadings)<br/>rownames(loadings) &lt;- c()<br/>path &lt;-matrix(1,15,1)<br/>up &lt;- cbind(loadings,path)<br/>zero &lt;-matrix(0, 15, 6)<br/>trait &lt;- as.data.frame(loadings [,6])<br/>down &lt;-cbind (zero, trait)<br/>colnames(down) &lt;- c("PC1","PC2","PC3","PC4","PC5", "path", "trait")<br/>pt.loadings &lt;- rbind(up, down)<br/>write.csv (pt.loadings, "C:\\Users\\Slaven\\Desktop\\pt.loadings.csv")</pre>
+
+      <ol start="3">
+
+        <li>Select the entire code and click the <span class="packt_screen">Run</span> icon <img src="images/11eb55e8-9872-4322-906c-6c26e2f1e298.png" style="width:2.42em;height:2.33em;" /> . Alternatively, use <em>Ctrl</em>+<em>R</em> to run the code.</li>
+
+        <li>Two files have now been created at the location you specified: <kbd>pt.loadings.csv</kbd> and <kbd>scores.csv</kbd>. We'll now use them to create a visualization in Tableau. Launch Tableau.</li>
+
+        <li>From the <span class="packt_screen">Connect</span> pane, select <span class="packt_screen">Text file</span> and navigate to either of the files you have created—<kbd>pt.loadings.csv</kbd> or <kbd>scores.csv</kbd>. Select it and click <span class="packt_screen">Open</span>.</li>
+
+        <li>In the <span class="packt_screen">Data Source</span> page, remove the file you've connected to by right-clicking on it and selecting <span class="packt_screen">Remove</span> from the drop-down menu:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1951 image-border" src="images/79020c86-7adb-401d-a00d-6f848c937822.png" style="width:38.67em;height:20.50em;" />
+
+      </p>
+
+      <ol start="7">
+
+        <li>From the <span class="packt_screen">Files</span> pane, drag and drop <span class="packt_screen">New Union</span> into the whitespace. The <span class="packt_screen">Union</span> window will open.</li>
+
+        <li>Drag and drop <kbd>scores.csv</kbd> and <kbd>pt.loadings.csv</kbd> from the <span class="packt_screen">Files</span> pane into the <span class="packt_screen">Union</span> window, one by one. Click on <span class="packt_screen">Apply</span>, and then click on <span class="packt_screen">OK</span> to exit the window:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1952 image-border" src="images/024aa69a-1b4b-4e81-9785-4ddd853415e3.png" style="width:23.08em;height:20.33em;" />
+
+      </p>
+
+      <ol start="9">
+
+        <li>Navigate to <span class="packt_screen">Sheet 1</span>.</li>
+
+        <li>Drag and drop <span class="packt_screen">X1</span> from <span class="packt_screen">Measures</span> into the <span class="packt_screen">Columns</span> shelf.</li>
+
+        <li>Drag and drop <span class="packt_screen">X2</span> from <span class="packt_screen">Measures</span> into the <span class="packt_screen">Rows</span> shelf.</li>
+
+        <li>Drag and drop <span class="packt_screen">PC1</span> from <span class="packt_screen">Measures</span> into the <span class="packt_screen">Columns</span> shelf, to the right of the <span class="packt_screen">SUM(X1)</span> pill.</li>
+
+        <li>Drag and drop <span class="packt_screen">PC2</span> from <span class="packt_screen">Measures</span> into the <span class="packt_screen">Rows</span> shelf, to the right of the <span class="packt_screen">SUM(X2)</span> pill:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1954 image-border" src="images/09d149e9-8eff-41ee-bdcb-b7c972e7c585.png" style="width:36.83em;height:6.33em;" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <ol start="14">
+
+        <li>In the <span class="packt_screen">Marks</span> card, click on the second <span class="packt_screen">SUM(PC1)</span> chart in order to expand it:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1955 image-border" src="images/e59b79d6-cac3-4c7a-b435-d0ad6be54536.png" style="width:10.25em;height:18.08em;" />
+
+      </p>
+
+      <ol start="15">
+
+        <li>Click on the <span class="packt_screen">Automatic</span> drop-down menu and change the mark type to <span class="packt_screen">Line</span>.</li>
+
+        <li>Drag and drop <span class="packt_screen">path</span> from <span class="packt_screen">Measures</span> onto <span class="packt_screen">Path</span> in the <span class="packt_screen">Marks</span> card.</li>
+
+        <li>Drag and drop <span class="packt_screen">trait</span> from <span class="packt_screen">Dimensions</span> onto <span class="packt_screen">Label</span> in the <span class="packt_screen">Marks</span> card:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1956 image-border" src="images/60cc68bd-3fe0-4283-9e64-bc6e6087b2ad.png" style="width:10.50em;height:19.83em;" />
+
+      </p>
+
+      <ol start="18">
+
+        <li>In the main menu toolbar, navigate to <span class="packt_screen">Analysis</span> and, from the drop-down menu, deselect <span class="packt_screen">Aggregate Measures</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1957 image-border" src="images/26696074-1a2d-485e-a280-5372935c796d.png" style="width:19.58em;height:36.00em;" />
+
+      </p>
+
+      <ol start="19">
+
+        <li>Right-click on the <span class="packt_screen">PC1</span> pill in the <span class="packt_screen">Columns</span> shelf and select <span class="packt_screen">Dual Axis</span> from the drop-down menu:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1958 image-border" src="images/5c97cf59-1789-41bd-ac96-7bd0e0dc51a8.png" style="width:21.83em;height:29.75em;" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <ol start="20">
+
+        <li>Right-click on the <span class="packt_screen">PC2</span> in the <span class="packt_screen">Rows</span> shelf and select <span class="packt_screen">Dual Axis</span> from the drop-down menu. We've finished our PCA and created a chart to visualize it:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2645 image-border" src="images/55acf9dd-4126-4d42-9056-e0ea0c343be3.png" style="width:87.42em;height:56.92em;" />
+
+      </p>
+
+      <div class="packt_tip">In order to make the chart more appealing and easier to read, you can adjust the formatting in a way that emphasizes the most important elements. In the preceding screenshot, we've increased the label font and made it bold, while at the same time changing the color of circles from orange to gray and decreasing opacity. Feel free to explore the formatting options that work best for you!</div>
+
+      <p class="mce-root"></p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

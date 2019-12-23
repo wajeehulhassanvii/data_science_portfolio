@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Basic forecasting and statistical inference</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">Basic forecasting and statistical inference</h1>
+
+    </header>
+
+    <article>
+
+      <p>The aim of this recipe is to introduce a basic forecasting method that relies on linear regression. We are going to use a built-in Tableau facility for linear regression. Simply put, regression analysis helps us discover predictors of a variable that we are interested in. We model the relationship between potential predictors and our variable of interest. Once we establish the model of the relationship between predictors and our variable, we can use it for further predictions.</p>
+
+      <p>To perform for casting, we will use the <kbd>hormonal_response_to_excercise.csv</kbd> dataset. This dataset comes from a health behavior study that aimed to explore the factors influencing cortisol response while exerting the maximal, peak effort during physical exercise (the <kbd>Cortmax</kbd> variable in our dataset).</p>
+
+      <p>Our first task is to explore how effectively we can predict the level of cortisol response in the point of maximal effort during physical exercise, based on the cortisol level at rest (the <kbd>Cortrest</kbd> variable). So, in this example, our variable of interest (variable we are trying to predict) is <kbd>Cortmax</kbd> (cortisol level during maximal effort), while our predictor variable (the one that we are using to make a prediction) is <kbd>Cortrest</kbd> (cortisol level during rest). We will try to model the relationship between these two variables.</p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Introduction</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">Introduction</h1>
+
+    </header>
+
+    <article>
+
+      <p>Let's understand this situation better through the following example. In one of our projects, a customer had a Cloud Data Warehouse and uses Matillion to load it. The customer was using Tableau as a primary BI tool. </p>
+
+      <p class="mce-root"></p>
+
+      <p>Let's look at the ideal ELT, which is shown in the following screenshot:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2145 image-border" src="images/993545e1-e461-4848-96bf-5ea9fc184175.png" style="width:88.58em;height:50.08em;" />
+
+      </p>
+
+      <p>There are two individual processes here. The green one is Matillion, that is scheduled via Matillion Scheduler. The orange one is Tableau and it is scheduled via Tableau Server. Usually, we assume that ETL is done at 6 am and we scheduled Tableau extracts and dashboards a bit later. In our example, it is 7 am. In addition, we are using <kbd>tabcmd</kbd> and schedule Tableau Reports via <strong>Windows Task Scheduler</strong>.</p>
+
+      <p>As you might guess, the marketing data source isn't the most reliable. Let's consider a scenario, where SFTP was delayed files delivery.</p>
+
+      <p class="mce-root"></p>
+
+      <p>As a result, the ELT job was failed and automatically restarted later at 7 a.m., as shown in the following screenshot:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2146 image-border" src="images/4859e03b-8092-4210-a79c-de9fe44dd4b5.png" style="width:87.50em;height:49.83em;" />
+
+      </p>
+
+      <p>In our scenario, the ELT process was finished around 9 am. This should be the time of triggering BI reports and refreshing exports.</p>
+
+      <p>As a result, business users got their dashboards with inconsistent data and they usually send all ELT/DW emails into the spam folder. Based on our experience, around noon, users will realize that they spent half of the workday for nothing by working with inconsistent data.</p>
+
+      <p>We will simulate this issue and learn best practices for ETL and Tableau using Matillion ETL. You will learn the following topics:</p>
+
+      <ul>
+
+        <li>How to install Matillion ETL</li>
+
+        <li>How to install Tabcmd for Linux</li>
+
+        <li>How to create custom Tableau component for Matillion</li>
+
+      </ul>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

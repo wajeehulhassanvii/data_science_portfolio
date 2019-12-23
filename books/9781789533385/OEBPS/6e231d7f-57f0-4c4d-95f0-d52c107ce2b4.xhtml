@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>There's more&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">There's more…</h1>
+
+    </header>
+
+    <article>
+
+      <p>In this recipe, we used a <kbd>FIXED LOD</kbd> expression. With the <kbd>FIXED LOD</kbd> expression, we specify the exact LOD we want to have in our visualization, and it is completely unaffected by the LOD we include in our view. Because of this, we kept the overall average of <span class="packt_screen">Employment</span> in our calculation, despite introducing other dimensions into the view that would normally disaggregate our measure.</p>
+
+      <p>Tableau also offers the following two other types of LOD expressions. Let's take a quick look at what they do:</p>
+
+      <ul>
+
+        <li><kbd>INCLUDE</kbd>: These expressions allow us to introduce an additional LOD into the view that is more granular than the one determined by the visualization itself. The <kbd>INCLUDE</kbd> expressions take into account the LOD that is included in the visualization, but always disaggregates data additionally by the dimension we specified in the <kbd>INCLUDE</kbd> expression itself.</li>
+
+        <li><kbd>EXCLUDE</kbd>: These expressions do the opposite of the <kbd>INCLUDE</kbd> expressions—they keep the data at the certain level of granularity that is higher than the one introduced by the view itself. This means that, when we create our visualization, Tableau will aggregate the measure according to the view, with the exception of the dimension that is specified in the <kbd>EXCLUDE</kbd> expression. This will result in the values repeating across multiple data points in our view because, instead of aggregating them across these data points, they are aggregated at a higher level.</li>
+
+      </ul>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

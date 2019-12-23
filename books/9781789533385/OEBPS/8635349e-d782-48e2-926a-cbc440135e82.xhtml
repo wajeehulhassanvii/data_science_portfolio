@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it...</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it...</h1>
+
+    </header>
+
+    <article>
+
+      <p>In this recipe, we will create some projects, groups, users, and set permissions.</p>
+
+      <ol>
+
+        <li style="font-weight: 400">Create two new projects, one for <kbd>Marketing</kbd> and <kbd>Finance</kbd>, by navigating to <span class="packt_screen">Create</span> | <span class="packt_screen">Project</span><span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2505 image-border" src="images/a815a4cd-1da4-4ad3-b5d8-0bd6163d36c1.png" style="width:47.08em;height:28.00em;" />
+
+      </p>
+
+      <ol start="2">
+
+        <li style="font-weight: 400">Create the following <span>three</span> groups for <span class="packt_screen">Finance</span> as shown in the following screenshot:
+<ul>
+<li style="font-weight: 400"><kbd>Owner</kbd></li>
+<li style="font-weight: 400"><kbd>Developers</kbd></li>
+<li style="font-weight: 400"><kbd>Viewers</kbd></li>
+</ul>
+</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2506 image-border" src="images/e84d2873-dda7-4004-9c74-1fd4da3e0d3b.png" style="width:50.17em;height:33.42em;" />
+
+      </p>
+
+      <ol start="3">
+
+        <li style="font-weight: 400">We create the following five local users:
+<ul>
+<li style="font-weight: 400"><kbd>Lisa</kbd>: <kbd>Finance Site Administrator Creator</kbd></li>
+<li style="font-weight: 400"><kbd>Mike</kbd>: <kbd>Finance Explorer(publish)</kbd></li>
+<li style="font-weight: 400"><kbd>Eric</kbd>: <kbd>Finance Explorer(publish)</kbd></li>
+<li style="font-weight: 400"><kbd>John</kbd>: <kbd>Finance Viewer</kbd></li>
+<li style="font-weight: 400"><kbd>Satu</kbd>: <kbd>Finance Viewer</kbd></li>
+</ul>
+</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2507 image-border" src="images/43afbc2a-4bb0-48e9-8103-8614f41d1945.png" style="width:44.08em;height:17.08em;" />
+
+      </p>
+
+      <ol start="4">
+
+        <li style="font-weight: 400">Add those users to their respective groups. We are considering developers are those who can publish views and data source.</li>
+
+        <li style="font-weight: 400">Within the <span class="packt_screen">Content</span> page, add the groups to their respective projects by clicking on the ellipse and selecting <span class="packt_screen">Permissions</span><span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2508 image-border" src="images/5062cb51-3733-4e42-bd22-8fecedbfc35f.png" style="width:21.92em;height:7.42em;" />
+
+      </p>
+
+      <ol start="6">
+
+        <li style="font-weight: 400">Add the groups to the projects and assign each group with the permissions roles. These roles act as a template to help make setup easier. To see each capability, expand the section. The permissions we set allow the content developers to manage all assets in their project, whereas the viewers can only view what's been published<span>, as shown in the following screenshot</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2509 image-border" src="images/ba7d759c-7249-4d22-8b68-55d2fd622677.png" style="width:108.50em;height:12.58em;" />
+
+      </p>
+
+      <p style="padding-left: 60px">New in 2019.1, we have the ability to manage Tableau Prep flows via Tableau Prep Conductor.</p>
+
+      <ol start="7">
+
+        <li style="font-weight: 400">Lock the permissions so that content publishers cannot deviate from the default permissions we set on the server<span>, as follows</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2511 image-border" src="images/253fbb12-7531-4db7-963d-01cda836cbb2.png" style="width:29.75em;height:22.58em;" />
+
+      </p>
+
+      <p style="padding-left: 90px">Because we made these test users, we can try publishing to the server using one account with those permissions; we can also try publishing to the server using an account without publishing access.</p>
+
+      <p class="mce-root"></p>
+
+      <ol start="8">
+
+        <li style="font-weight: 400">In Tableau Developer, open the <span class="packt_screen">Superstore</span> sample workbook and go to the <span class="packt_screen">Server</span> menu and select <span class="packt_screen">Publish Workbook...</span><span> as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2512 image-border" src="images/dfc251ed-3254-42bb-a476-852684d86d26.png" style="width:68.50em;height:10.58em;" />
+
+      </p>
+
+      <ol start="9">
+
+        <li>Publish this to the <span class="packt_screen">Finance</span> project<span>, as follows</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2513 image-border" src="images/5c1f3a09-0c87-4dea-8008-6f782ba3d18e.png" style="width:30.83em;height:37.33em;" />
+
+      </p>
+
+      <ol start="10">
+
+        <li style="font-weight: 400">In Prep, open a sample flow from the beta site and go to the <span class="packt_screen">Server</span> menu and select Publish Flow<span>, as follows</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2514 image-border" src="images/c220d0b8-2e4a-4c9b-9d15-223ceaec907a.png" style="width:36.08em;height:6.08em;" />
+
+      </p>
+
+      <ol start="11">
+
+        <li style="font-weight: 400">Publish this to the <span class="packt_screen">Finance</span> project<span>, as follows</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2515 image-border" src="images/9b3c6500-61a1-4482-8a68-476b01fcd068.png" style="width:28.42em;height:30.83em;" />
+
+      </p>
+
+      <ol start="12">
+
+        <li style="font-weight: 400">Log into the server to access the published content. Try this as different users.</li>
+
+      </ol>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

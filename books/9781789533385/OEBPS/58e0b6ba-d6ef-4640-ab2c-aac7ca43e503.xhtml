@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it…</h1>
+
+    </header>
+
+    <article>
+
+      <ol>
+
+        <li>Launch R, open a new script and type <kbd>install.packages("rpart", repos='http://cran.us.r-project.org')</kbd>.</li>
+
+        <li>Select the text, and click on <img class="alignnone size-full wp-image-2959 image-border" src="images/780886b3-89a6-46a4-baa5-7feda10179f7.png" style="width:2.50em;height:2.67em;" /> or press <em>Ctrl</em> + <em>R</em>.</li>
+
+        <li>When the installation process is completed, load the package by typing the following line:</li>
+
+      </ol>
+
+      <pre>   library(rpart) </pre>
+
+      <ol start="4">
+
+        <li>Select the text, and click on<span> <img class="alignnone size-full wp-image-2959 image-border" src="images/780886b3-89a6-46a4-baa5-7feda10179f7.png" style="width:2.50em;height:2.67em;" />or press <em>Ctrl</em> + <em>R</em>.</span></li>
+
+        <li>In Tableau, in the main menu toolbar, click on <span class="packt_screen">Analysis</span> and then click on <span class="packt_screen">Create Calculated Field...</span>.</li>
+
+        <li>Rename the field from <span class="packt_screen">Calculation 1</span> to <kbd>Random Forest</kbd> and type the following expression into the formula space:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px">SCRIPT_REAL('library(rpart);<br/>fit = rpart(Achtmax ~ Cortrest + Alcohol + Tobacco + Height + Age + Weight,<br/>method="anova", data.frame(Achtmax = .arg1, Cortrest =.arg2, Alcohol=.arg3, Tobacco =.arg4, Height =.arg5, Age =.arg6, Weight=.arg7));<br/>t(data.frame(predict(prune(fit,0.05), type = "vector")))[1,]',<br/>AVG([Achtmax]),<br/>AVG([Cortrest]),<br/>AVG([Alcohol]),<br/>AVG([Tobacco]),<br/>AVG([Height]),<br/>AVG([Age]),<br/>AVG([Weight]))</pre>
+
+      <p class="mce-root"></p>
+
+      <p class="mce-root"></p>
+
+      <p class="mce-root"></p>
+
+      <p class="mceNonEditable"></p>
+
+      <p style="padding-left: 60px">The preceding code is shown in the following screenshot:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1864 image-border" src="images/9119f6c9-5aa9-4006-800e-feefc1636319.png" style="width:56.00em;height:28.08em;" />
+
+      </p>
+
+      <ol start="7">
+
+        <li>Click <span class="packt_screen">OK</span> to exit the editor window and save the calculated field.</li>
+
+        <li>Drag and drop <span class="packt_screen">Random Forest</span> from <span class="packt_screen">Measures</span> into the <span class="packt_screen">Rows</span> shelf.</li>
+
+        <li>Drag and drop the <span class="packt_screen">ID</span> variable from <span class="packt_screen">Dimensions</span> into the <span class="packt_screen">Columns</span> shelf.</li>
+
+        <li>In the <span class="packt_screen">Marks</span> card, change the mark type from <span class="packt_screen">Automatic</span> to <span class="packt_screen">Circle</span> using the drop-down menu.</li>
+
+        <li>Drag and drop <span class="packt_screen">ID</span> from <span class="packt_screen">Dimensions</span> to <span class="packt_screen">Label</span> in the <span class="packt_screen">Marks</span> card.</li>
+
+        <li>Drag and drop <span class="packt_screen">Random Forest</span> from <span class="packt_screen">Measures</span> to <span class="packt_screen">Color</span> in the <span class="packt_screen">Marks</span> card.</li>
+
+        <li>Rename the sheet to <span class="packt_screen">Random Forest</span><span> <span class="packt_screen">Regression</span></span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2636 image-border" src="images/436bdc11-bd03-4a0e-897d-2bd6b726587f.png" style="width:92.83em;height:43.58em;" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

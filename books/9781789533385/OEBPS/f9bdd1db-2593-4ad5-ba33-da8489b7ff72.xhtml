@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Switching between dimensions with parameters</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">Switching between dimensions with parameters</h1>
+
+    </header>
+
+    <article>
+
+      <ol start="1">
+
+        <li>Connect to the data sources.</li>
+
+        <li>Click on the <span class="packt_screen">Sheet 1</span> tab in the bottom of the workbook.</li>
+
+        <li>In the <span class="packt_screen">Data</span> pane, make sure the <kbd>Internet_usage</kbd> data source is active.</li>
+
+        <li>Click on the black downward-pointing arrow to the right of <span class="packt_screen">Dimensions</span> and select <span class="packt_screen">Create Parameter...</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1259 image-border" src="images/3450f3dc-46f6-4568-b75a-c215e4a1c2e3.png" style="width:17.08em;height:25.50em;" />
+
+      </p>
+
+      <ol start="5">
+
+        <li>In the <span class="packt_screen">Create Parameter</span> window, change the name of the parameter from <span class="packt_screen">Parameter 1</span> to <kbd>Region or Settlement Type</kbd>.</li>
+
+        <li>In the <span class="packt_screen">Data type</span> drop-down menu, choose <span class="packt_screen">String</span>.</li>
+
+        <li>Under <span class="packt_screen">Allowable values</span>, change the selection from the default of <span class="packt_screen">All</span> to <span class="packt_screen">List</span>.</li>
+
+        <li>In the <span class="packt_screen">List of values</span> pane that appears, click on the <span class="packt_screen">Click to add new value</span> placeholder and type <kbd>Region</kbd>.</li>
+
+      </ol>
+
+      <ol start="9">
+
+        <li>In the row under add another value, <kbd>Settlement Type</kbd>, as shown in the following screenshot:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1256 image-border" src="images/f9560a19-6557-447b-95cf-01f6cadf39ab.png" style="width:46.17em;height:41.75em;" />
+
+      </p>
+
+      <ol start="10">
+
+        <li>Click on <span class="packt_screen">OK</span>.</li>
+
+        <li>A new section, <span class="packt_screen">Parameters</span>, will appear under <span class="packt_screen">Measures</span>, showing the parameter you just made (<span class="packt_screen">Region or Settlement Type</span>). Hover over the <span class="packt_screen">Region or Settlement Type</span> pill until a white arrow appears, click on it, and choose <span class="packt_screen">Show Parameter Control</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1257 image-border" src="images/b96525f0-2284-401d-8a79-05f46990c252.png" style="width:26.17em;height:26.33em;" />
+
+      </p>
+
+      <ol start="12">
+
+        <li>Let’s create a calculated field that we will use in our visualization to switch between dimensions. Click on the black downward-pointing arrow to the right of <span class="packt_screen">Dimensions</span> and select <span class="packt_screen">Create Calculated Field...</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1258 image-border" src="images/5c1b1954-1386-4fc8-85f3-a9b0e14a45f2.png" style="width:14.08em;height:21.17em;" />
+
+      </p>
+
+      <ol start="13">
+
+        <li>When the calculated field window opens, change the name from <span class="packt_screen">Calculation1</span> to <kbd>Switching</kbd>, click on <span class="packt_screen">Apply</span>, and type the following expression:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px" class="mce-root"><strong>CASE</strong> [<strong>Region</strong> or <strong>Settlement Type</strong>] <br/>when "<strong>Region</strong>" then [<strong>Area</strong>] <br/>when "<strong>Settlement Type</strong>" then [<strong>Settlement type</strong>] <br/><span>END</span></pre>
+
+      <p style="padding-left: 60px">Let's see how it looks:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1260 image-border" src="images/31a063ce-9dd2-41d0-9c1a-95449c6dd5f2.png" style="width:42.50em;height:24.75em;" />
+
+      </p>
+
+      <ol start="14">
+
+        <li>Click on <span class="packt_screen">Apply</span> and click on <span class="packt_screen">OK</span>.</li>
+
+        <li>Let's create the visualization. Drag and drop the new dimension you created, <span class="packt_screen">Switching</span>, into the <span class="packt_screen">Columns</span> shelf.</li>
+
+        <li>Drag and drop <span class="packt_screen">Area</span> from <span class="packt_screen">Dimensions</span> to the <span class="packt_screen">Columns</span> shelf as well, to the right of the <span class="packt_screen">Switching</span> pill.</li>
+
+        <li>Drag and drop <span class="packt_screen">Internet penetration</span> from <span class="packt_screen">Measures</span> into the <span class="packt_screen">Rows</span> shelf.</li>
+
+        <li>Hover over the <span class="packt_screen">Internet penetration</span> pill so that a small downward arrow appears and click on it.</li>
+
+        <li>Navigate to <span class="packt_screen">Measure</span> (<span class="packt_screen">Sum</span>), and in the drop-down menu, select <span class="packt_screen">Average</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1342 image-border" src="images/3143aed2-cbf2-48a2-89f1-f8c36dbee9bc.png" style="width:25.75em;height:53.58em;" />
+
+      </p>
+
+      <ol start="20">
+
+        <li>Drag and drop <span class="packt_screen">Area</span> from <span class="packt_screen">Dimensions</span> to <span class="packt_screen">Color</span> in the <span class="packt_screen">Marks</span> card.</li>
+
+        <li>Change the mark type in the drop-down menu in the <span class="packt_screen">Marks</span> card from <span class="packt_screen">Automatic</span> to <span class="packt_screen">Shape</span>.</li>
+
+        <li>Right-click on the column field label in the chart, <span class="packt_screen">Switching</span>/<span class="packt_screen">Area</span>, and select <span class="packt_screen">Hide Field Labels for Columns</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1264 image-border" src="images/bd0ceeee-d04d-4a2e-9659-89d53cf5c43a.png" style="width:32.58em;height:10.58em;" />
+
+      </p>
+
+      <ol start="23">
+
+        <li>Hover over the <span class="packt_screen">Area</span> pill in the <span class="packt_screen">Columns</span> shelf until a white arrow appears; click on it and deselect <span class="packt_screen">Show Header</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1341 image-border" src="images/a149da46-2df5-43de-b57c-b47780395c22.png" style="width:13.58em;height:30.00em;" />
+
+      </p>
+
+      <ol start="24">
+
+        <li>Double-click on <span class="packt_screen">Tooltip</span> in the <span class="packt_screen">Marks</span> card, and, in the <span class="packt_screen">Edit Tooltip</span> window, remove <span class="packt_screen">Switching</span>: &lt;<span class="packt_screen">Switching</span>&gt;. When you are done, click <span class="packt_screen">OK</span>.</li>
+
+        <li>Try it by switching from <span class="packt_screen">Region or Settlement Type</span> and back in the parameter-control drop-down menu.</li>
+
+        <li>Click on the New Dashboard option in the bottom of the worksheet to create a new dashboard.</li>
+
+        <li>Drag and drop <span class="packt_screen">Sheet 1</span>, which you just made, into the dashboard view:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1340 image-border" src="images/f7f505c9-b6b0-4339-82c7-776bf750f049.png" style="width:82.42em;height:66.42em;" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

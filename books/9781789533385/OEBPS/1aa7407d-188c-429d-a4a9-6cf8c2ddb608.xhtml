@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it…</h1>
+
+    </header>
+
+    <article>
+
+      <ol>
+
+        <li>In the <span class="packt_screen">Data</span> pane, click on the black arrow to the right of <span class="packt_screen">Dimensions</span> and select <span class="packt_screen">Create Calculated Field…</span>.</li>
+
+        <li>Rename the new calculated field from <span class="packt_screen">Calculation 1</span> to <kbd>Difference from average</kbd>.</li>
+
+        <li>In the formula space, type <kbd>AVG(([Employment])-{FIXED: AVG([Employment])})</kbd>, as shown in the following screenshot:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/14628bea-d975-435a-91cb-88a92603295a.png" />
+
+      </p>
+
+      <ol start="4">
+
+        <li>Click on <span class="packt_screen">Apply</span> and then click on <span class="packt_screen">OK</span> to exit the window. The new calculated field, <span class="packt_screen">Difference from average</span>, has now appeared under <span class="packt_screen">Measures</span> in the <span class="packt_screen">Data</span> pane.</li>
+
+        <li>Drag and drop <span class="packt_screen">Difference from average</span> from <span class="packt_screen">Measures</span> into the <span class="packt_screen">Rows</span> shelf.</li>
+
+        <li>Drag and drop <span class="packt_screen">Year</span> from <span class="packt_screen">Dimensions</span> into the <span><span class="packt_screen">Columns</span> </span>shelf.</li>
+
+        <li>Right-click on the<span> </span><span class="packt_screen">Year</span><span> </span>pill in the<span> </span><span class="packt_screen">Columns</span><span> </span>shelf, and in the drop-down menu switch to<span> </span><span class="packt_screen">Discrete</span>. </li>
+
+      </ol>
+
+      <ol start="8">
+
+        <li>Drag and drop <span class="packt_screen">Employment</span> from <span class="packt_screen">Measures</span> onto <span class="packt_screen">Label</span> in the <span class="packt_screen">Marks</span> card as shown in the following screenshot:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/1ba781bf-147d-4017-a445-50a8f643fc63.png" style="width:70.50em;height:47.67em;" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

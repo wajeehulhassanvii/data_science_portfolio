@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>See also</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">See also</h1>
+
+    </header>
+
+    <article>
+
+      <p>There are other methods that we can use to install Tableau Server. One way is to build a clustered environment. This architecture is great for systems that have 24 hours service level requirements or to optimize performance.</p>
+
+      <p>This recipe assumes you've stood up the correct architecture components in AWS and followed the best practice guidelines for network security and load-balancing:</p>
+
+      <ol>
+
+        <li>When installing Tableau on the first node (referred to as instance 1), use the <span class="packt_screen">Create new Tableau Server installation</span> option. When installing Tableau Server on the redundant nodes (referred to as instance 2), click on the additional node to existing Tableau Server cluster option<span>, as follows</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2501 image-border" src="images/c0b20dd2-6be0-4fd9-9587-7ff5cd34f2d6.png" style="width:24.92em;height:5.17em;" />
+
+      </p>
+
+      <ol start="2">
+
+        <li>Create a bootstrap file from instance 1, by logging into the TSM.</li>
+
+      </ol>
+
+      <ol start="3">
+
+        <li>Go to <span class="packt_screen">Configuration</span> and click on <span class="packt_screen">Download Bootstrap File</span><span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2502 image-border" src="images/79ac50fc-e4d0-47cb-9a92-871738719a52.png" style="width:46.75em;height:27.92em;" />
+
+      </p>
+
+      <ol start="4">
+
+        <li>Copy the <kbd>bootstrap.json</kbd> file to instance 2, execute the installer, and fill in the node configuration as follows:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2503 image-border" src="images/3c0a0777-3265-4cb8-a4d4-58ece146c07a.png" style="width:35.50em;height:27.42em;" />
+
+      </p>
+
+      <ol start="5">
+
+        <li>When prompted, log in to the TSM and you will see a message showing that node 2 was added to the cluster. Click on <span class="packt_screen">Continue</span>. Take a look at the <span class="packt_screen">Pending Changes</span> and <span class="packt_screen">Apply Changes</span> tabs and click on <span class="packt_screen">Restart</span> and then <span class="packt_screen">Confirm</span><span>, as follows:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2504 image-border" src="images/5592c436-5db2-4c23-bec0-38dfa4431eb9.png" style="width:234.75em;height:16.50em;" />
+
+      </p>
+
+      <ol start="6">
+
+        <li class="CDPAlignLeft CDPAlign">If you install a total of three or more nodes, you should also deploy a co-ordination service ensemble.</li>
+
+      </ol>
+
+      <div class="packt_infobox">Read more about Coordination Services and configuration processes in the second and third nodes in the online Tableau help document.  There are more materials about high availability and redundancy in the online Tableau help document.  https://onlinehelp.tableau.com/current/server/en-us/distrib_ha_install_3node.htm</div>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

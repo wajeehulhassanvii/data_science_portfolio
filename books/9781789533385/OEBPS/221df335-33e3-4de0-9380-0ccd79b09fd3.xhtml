@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Keeping an eye on the calculations</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">Keeping an eye on the calculations</h1>
+
+    </header>
+
+    <article>
+
+      <p>Calculated fields, especially when complex, can also give Tableau <span>a hard time</span>. However, you can counter this by trying to implement the following:</p>
+
+      <ol>
+
+        <li>If there's a calculation metric that's frequently used in your workbook, consider creating it directly in the database, and not as a table calculation. This can save computational resources Tableau would otherwise have to invest in creating the views.</li>
+
+        <li>Disaggregated (row-level) calculations can be very demanding. Try to aggregate your measures when creating calculated fields.</li>
+
+      </ol>
+
+      <ol start="3">
+
+        <li>When alternatives are available, consider using functions that are faster to execute in your calculated fields. For example:</li>
+
+      </ol>
+
+      <ul>
+
+        <li>Try replacing IF-ELSE statements with CASE-WHEN statements</li>
+
+        <li>Try to avoid nested IF statements</li>
+
+        <li>Try to skip using LOD expressions if not necessary, since they can be computationally demanding</li>
+
+      </ul>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

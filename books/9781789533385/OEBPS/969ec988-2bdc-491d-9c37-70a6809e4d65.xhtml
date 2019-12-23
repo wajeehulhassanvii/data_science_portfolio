@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>There's more&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">There's more…</h1>
+
+    </header>
+
+    <article>
+
+      <p>In the syntax for this recipe, you might have noticed the following line of code:</p>
+
+      <pre style="padding-left: 60px">save(reg, file = "C:/Users/Slaven/Documents/mymodel.rda")</pre>
+
+      <p>This line created a <kbd>.rda</kbd> file on your hard drive, witch contains our regression model. Once you have saved the model, you can reuse it with another data set. Let's say we receive a new data set with data which contains information about cortisol level at the beginning of the test and at rest, but no information on the cortisol level at the point of maximum exertion<span>. Thanks to our model, which predicts the level of cortisol at the point of maximum exertion, we can estimate its value for the new subjects. We just need to load our model by creating a calculated field with the following line of code: </span></p>
+
+      <pre style="padding-left: 60px">SCRIPT_REAL('<br/>mydata &lt;- data.frame(y=.arg1, x1=.arg2, x2=.arg3);<br/>load ("C:/Users/Slaven/Documents/mymodel.rda")<br/>prob &lt;- predict(reg, newdata = mydata, type = "response")'<br/>,<br/>AVG([Cortmax]),AVG([Cortrest]), AVG([Cortp]))</pre>
+
+      <p>The new calculated field will contain the predicted values of <kbd>Cortmax</kbd>. However, keep in mind that the new data set has to contain a field named the same as the variable we were predicting in the original data set (in this case, <kbd>Cortmax</kbd>) for the script to work, even if it is completely empty. Also, make sure that all the other fields are also named exactly the same as in the original data set, where the model was created.</p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

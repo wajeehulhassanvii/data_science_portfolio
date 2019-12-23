@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it…</h1>
+
+    </header>
+
+    <article>
+
+      <ol>
+
+        <li>
+
+          <p>Open Terminal and run the following command:</p>
+
+        </li>
+
+      </ol>
+
+      <pre style="padding-left: 60px;"><strong>ssh -o ServerAliveInterval=10 -i ~/.ssh/tableau-cookbook.pem -N -L 10000:localhost:10000 hadoop@ec2-18-215-157-216.compute-1.amazonaws.com</strong></pre>
+
+      <p style="padding-left: 60px;">But this could be a different command in your case.</p>
+
+      <ol start="2">
+
+        <li>
+
+          <p>Open Tableau Desktop and create a new connection using Amazon Hadoop EMR Hive.</p>
+
+        </li>
+
+        <li>
+
+          <p>Download and install ODBC drivers for your OS from: <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-bi-tools.html">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-bi-tools.html</a></p>
+
+        </li>
+
+        <li>
+
+          <p>Now, we can connect Hive<span>, as follows</span>:</p>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1933 image-border" src="images/41486cb8-cd7e-439b-9153-9cc4b28610aa.png" style="width:24.00em;height:23.33em;" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <ol start="5">
+
+        <li>
+
+          <p>Then choose <span class="packt_screen">default</span> as a schema and <span class="packt_screen">cloudfront_logs</span> as a table and go to the sheet.<span> </span><span>As</span><span> </span><span>you know, every drag and drop will initialize the SQL query and will trigger our EMR. In order to avoid this, we should pause Auto Updates and create our r</span><span>eport, then run the final query, as follows:</span></p>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1934 image-border" src="images/d5428430-fed6-476e-b159-e528d9274058.png" style="width:45.92em;height:26.50em;" />
+
+      </p>
+
+      <p>As a result, we were able to connect to Tableau. You can connect to the bigger <kbd>eng_1M_1gram</kbd><span> table</span> as well. There are lots of different techniques for accessing data from Hadoop, and often it depends on use case.</p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

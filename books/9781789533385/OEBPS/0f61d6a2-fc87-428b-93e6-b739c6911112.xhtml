@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it…</h1>
+
+    </header>
+
+    <article>
+
+      <p>During this part of this chapter, we will measure our performance based on the following three metrics:</p>
+
+      <ul>
+
+        <li>Load time</li>
+
+        <li>Storage use</li>
+
+        <li>Query performance</li>
+
+      </ul>
+
+      <p>Let's see how it is done by performing the following steps:</p>
+
+      <ol>
+
+        <li>Open Tableau Desktop and click on <span class="packt_screen">Connect to Amazon Redshift</span>. Fill in the credentials and click on <span class="packt_screen">Sign In</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1941 image-border" src="images/38439cda-28a3-421a-9df8-69b13816d816.png" style="width:22.00em;height:20.42em;" />
+
+      </p>
+
+      <p style="padding-left: 60px;">Basically, we have now connected to Amazon Redshift. If you get an error, you should check your Firewall settings and make sure that you can connect with a SQL client to the cluster.</p>
+
+      <p style="padding-left: 60px;">Now, we can choose the tables and create a Tableau data source. However, this isn't a true case. We need to make sure that we get the best possible performance. As a result, we need to learn more about our data usage, that is, SQL queries, patterns, tables, and joins.</p>
+
+      <ol start="2">
+
+        <li>We should turn off Amazon Redshift caches to make accurate performance comparisons. In the following code block, we will run the following command:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px;">set enable_result_cache_for_session to off;</pre>
+
+      <ol start="3">
+
+        <li>Let's finish our Tableau Data Source. We should use the following tables:</li>
+
+      </ol>
+
+      <ul>
+
+        <li style="padding-left: 30px;"><kbd>customer</kbd></li>
+
+        <li style="padding-left: 30px;"><kbd>lineorder</kbd></li>
+
+        <li style="padding-left: 30px;"><kbd>supplier</kbd></li>
+
+        <li style="padding-left: 30px;"><kbd>dwdate</kbd></li>
+
+      </ul>
+
+      <p class="mce-root"></p>
+
+      <p style="padding-left: 60px;">The following screenshot depicts the preceding listed tables:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1320 image-border" src="images/d3cf2e20-3c8b-4639-bf46-2c73e1280261.png" style="width:50.50em;height:14.42em;" />
+
+      </p>
+
+      <p style="padding-left: 60px;">There are joins too, as shown in the following list:</p>
+
+      <ul>
+
+        <li><kbd>lineorder.lo_custkey = customer.c_custkey</kbd></li>
+
+        <li><kbd>lineorder.lo_suppkey = supplier.s_suppkey</kbd></li>
+
+        <li><kbd>lineorder.lo_orderdate = dwdate.d_datekey</kbd></li>
+
+      </ul>
+
+      <ol start="4">
+
+        <li>Finally, go to <span class="packt_screen">Sheet 1</span>, and you will see that our data source has been created and is ready to use.</li>
+
+      </ol>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

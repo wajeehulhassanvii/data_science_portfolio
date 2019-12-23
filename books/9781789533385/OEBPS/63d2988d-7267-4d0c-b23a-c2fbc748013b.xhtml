@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How it works...</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How it works...</h1>
+
+    </header>
+
+    <article>
+
+      <p>In this recipe, we've performed some basic data preparation.</p>
+
+      <p>In the first step, we split the field <span class="packt_screen">Taster Name</span> into two fields—one containing the first and one the last name of the wine taster. Of course, this step wasn't necessary, but it's a step that often needs to be performed when dealing with string fields. It allows for more detail and flexibility in data analysis—instead of having the first and the last name concatenated, we now have them in separate columns, and we have used them separately to analyze data only by first name, last name, or both.</p>
+
+      <p class="mce-root"></p>
+
+      <p>The next step we performed was converting a field, <span class="packt_screen">F1</span>, from a measure into a dimension. We performed this step because <span class="packt_screen">F1</span> is actually an index field. It isn't really a continuous measure, although Tableau automatically designated it as one due to its numerical content. But we know its values are actually discrete, because they don't represent a quantity—they serve merely as a unique identifier of the cases (rows). When to convert a measure into a dimension, and vice versa, depends exclusively on our judgement and familiarity with the dataset. We should have a good understanding of what the fields in our dataset actually represent and adjust them to a measure/dimension according to our knowledge.</p>
+
+      <p>In the third step, we renamed the fields we produced when splitting the <span class="packt_screen">Taster Name</span> field. The names automatically assigned by Tableau weren't very informative. When creating views, we always want to make sure both we ourselves and the end users of our workbook or dashboard know exactly what's being presented. We should always strive to make fieldnames clear, unambiguous, and informative.</p>
+
+      <p>Finally, we assigned an alias to the <span class="packt_screen">Taster Last Name</span> field member. Aliases are alternative names we can assign to members of discrete dimensions. In this case, we used an alias to correct a case of inappropriately parsed text resulting from a split. But you can use aliases whenever you would like to change a dimension member's name. As we saw, it isn't necessary to assign aliases to all of the members of a dimension—you can assign an alias to only one member, to all of them, or to any number in between.  </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

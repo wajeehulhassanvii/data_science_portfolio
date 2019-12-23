@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How it works...</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How it works...</h1>
+
+    </header>
+
+    <article>
+
+      <p>We created a calculated field that contains the difference between the current and the previous data point. We used the <kbd>LOOKUP</kbd> function to return the aggregated value of <kbd>Civilian Labor Force</kbd> for the previous data point, and then subtracted it from the aggregated value of <kbd>Civilian Labor Force</kbd> in the current data point. This resulted in a new field that contains this difference, and which we can now use in our visualizations. <span>Keep in mind that all table calculation functions, including the <kbd>LOOKUP</kbd> function, require an aggregated value to work with. That means that, when we use fields without an aggregation function – for example, just <kbd>Civilian Labor Force</kbd> instead of <kbd>SUM([Civilian Labor Force])</kbd></span>—<span>we may get an error in the calculated field.</span></p>
+
+      <p>However, it is important to note that our original dataset has remained unchanged—the calculated field we created has not been written to it and, if we were to open a new Tableau workbook and connect to the <kbd>Unemployment_rates_1990-2016.csv</kbd> dataset, we would not find our calculated field among the fields in the data source.</p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

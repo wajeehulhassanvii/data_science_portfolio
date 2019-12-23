@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>There's more&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">There's more…</h1>
+
+    </header>
+
+    <article>
+
+      <p>The type of calculation we created in this recipe is called table calculation, which simply means that the value of the calculated field we created is dependent on the dimension we use with it in our visualization. If we were, for example, to choose <span class="packt_screen">Month</span> instead of <span class="packt_screen">Year</span>, we would get the difference from the previous month. If we look at the <span class="packt_screen">Data Source</span> sheet, we will see that the value of this calculated field in each row is <span class="packt_screen">Undefined</span>, as shown in the following screenshot:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/d1cc3d9c-dbb3-4309-b1c1-218f3ec89f72.png" />
+
+      </p>
+
+      <p>However, calculated fields can also have other types of output. We could, for example, sum up <span class="packt_screen">Employment</span> and <span class="packt_screen">Unemployment</span> to get <span class="packt_screen">Civilian Labor Force</span>, using the <kbd>[Employment]+[Unemployment]</kbd> <span>expression.</span> If we look at the <span class="packt_screen">Data Source</span> preview now, we can see the value of the new calculated field for each row in our data source:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/612899f0-46cd-458b-8426-91acecaeee71.png" />
+
+      </p>
+
+      <p>Tableau offers a multitude of functions that can be used to perform a very versatile and wide range of tasks. To truly master Tableau calculated fields, one must understand and get comfortable with using functions. Every function in Tableau has certain arguments it requires. To view functions, their descriptions, and the arguments they take, open a new calculated field and click on the arrow on the right-hand side of the editor window. This will expand the window to display a list of functions with their associated details:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/d4dfeef0-abff-4c09-8f49-7c7c08b1271c.png" style="width:23.08em;height:17.00em;" />
+
+      </p>
+
+      <p>You should also always be mindful of the fact that not all functions can be applied to all data types. For example, the <span class="packt_screen">SUM</span> function cannot be applied to strings, but can be applied to numerical values. In the drop-down menu on top of the list of functions, you can select functions suited for different data types.</p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

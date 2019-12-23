@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it…</h1>
+
+    </header>
+
+    <article>
+
+      <p> In <a href="03d6a7f8-eb7e-4966-8b99-da1fff93692c.xhtml">Chapter 10</a>, <em>Tableau for Big Data</em>, we used a trial version of Snowflake. Let's connect Snowflake and build our flow:</p>
+
+      <ol>
+
+        <li>Click on <span class="packt_screen">Connections</span> and choose Snowflake. Fill in the credentials:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2087 image-border" src="images/9d2c0ce2-ad99-4fb9-bcc6-a03b646aeb44.png" style="width:35.08em;height:35.25em;" />
+
+      </p>
+
+      <p style="padding-left: 60px">We use the same credentials that we created in <a href="03d6a7f8-eb7e-4966-8b99-da1fff93692c.xhtml">Chapter 10</a>, <em>Tableau for Big Data</em>.</p>
+
+      <ol start="2">
+
+        <li>Choose the <span class="packt_screen">Virtual Warehouse</span> (computing resource), <span class="packt_screen">Database</span>, and <span class="packt_screen">Schema</span> options. It's the same as we did in Tableau Desktop:</li>
+
+      </ol>
+
+      <table style="border-collapse: collapse;width: 100%" border="1">
+
+        <tbody>
+
+          <tr>
+            <td>
+              <p><span class="packt_screen">Warehouse</span></p>
+            </td>
+            <td>
+              <p><kbd>SF_TUTS_WH</kbd></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p><span class="packt_screen">Database</span></p>
+            </td>
+            <td>
+              <p><kbd>SNOWFLAKE_SAMPLE_DATA</kbd></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p><span class="packt_screen">Schema</span></p>
+            </td>
+            <td>
+              <p><kbd>TPCH_SF1</kbd></p>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <p> </p>
+
+      <p style="padding-left: 60px">You might choose a different schema with a bigger dataset, such as  <kbd>TPCH_SF10</kbd>, <kbd>TPCH_SF100</kbd>, or <kbd>TPCH_SF1000</kbd>.</p>
+
+      <ol start="3">
+
+        <li>Drag and drop tables onto the canvas. You should already know the differences between Desktop and Prep. Let's drag and drop the following tables:
+<ul>
+<li><span class="packt_screen">LINEITEM</span></li>
+<li><span class="packt_screen">ORDERS</span></li>
+<li><span class="packt_screen">CUSTOMER</span></li>
+</ul>
+</li>
+
+      </ol>
+
+      <div class="packt_tip">We need to join them all together. In Tableau Prep, we can join only two streams at once. We should join the <kbd>LINEITEM</kbd> and <kbd>ORDERS</kbd> tables together. But before joining the dataset, we can learn more about tables and their data using the <span class="packt_screen">Clean</span> step. If we don’t want to change any data in the tables, the <span class="packt_screen">Clean</span> step is optional. Anyway, it's a good practice to use the <span class="packt_screen">Clean</span> step after every operation.</div>
+
+      <p style="padding-left: 90px">This is how it should look now:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2088 image-border" src="images/3349a112-2951-4c5c-8b8f-49680420ce90.png" style="width:35.00em;height:20.00em;" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <ol start="4">
+
+        <li>Click on <span class="packt_screen">Join 1</span> and you'll see the <span class="packt_screen">Profile</span> pane. It has nice visualization of the <span class="packt_screen">JOIN</span> statement:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2089 image-border" src="images/81766981-12e6-4ba4-901d-9d0147e4f171.png" style="width:162.50em;height:77.17em;" />
+
+      </p>
+
+      <p style="padding-left: 60px">In the <span class="packt_screen">O_ORDERKEY</span> data card, you might see lots of red values. It means these values aren't joined. Due to the sampling of <span class="packt_screen">LINEITEM</span>, we don't have the full dataset here. If you want to check the full dataset, you should adjust the <span class="packt_screen">LINEITEM</span> source table component and eliminate sampling. We will do this at the end of the flow.</p>
+
+      <div class="packt_tip">There's another trick to working with big datasets. You might apply filters for the <span class="packt_screen">LINEITEM</span> data source and filter one or multiple. For example, you might add the <span class="packt_screen">[L_ORDERKEY]=1]</span> filter.</div>
+
+      <p style="padding-left: 60px">It will bring us only three rows and add transparency.</p>
+
+      <ol start="5">
+
+        <li>Let's add the <kbd>CUSTOMER</kbd> table. Drag and drop the <span class="packt_screen">CUSTOMER</span> object to <span class="packt_screen">JOIN 1</span> and choose the <span class="packt_screen">JOIN</span> operation. It will create <span class="packt_screen">JOIN 2</span>. Because we filtered our <span class="packt_screen">LINEITEM</span> table, we can check that we have only one customer in the flow.</li>
+
+        <li>Let's create some metrics. Add the <span class="packt_screen">Add Aggregate</span> step by clicking the <span class="packt_screen">+</span> sign. At the <span class="packt_screen">Profile</span> pane, we have <span class="packt_screen">Grouped Fields</span> and <span class="packt_screen">Aggregated Fields</span>.</li>
+
+      </ol>
+
+      <ol start="7">
+
+        <li>Drop <span class="packt_screen">C_MKTSEGMENT</span> into <span class="packt_screen">Grouped Fields</span> and then drop the metric fields into <span class="packt_screen">Aggregated Fields</span>; in addition, we will rename them:</li>
+
+      </ol>
+
+      <table style="border-collapse: collapse;width: 100%" border="1">
+
+        <tbody>
+
+          <tr>
+            <td>
+              <p><strong>Original name</strong></p>
+            </td>
+            <td>
+              <p><strong>New name</strong></p>
+            </td>
+            <td>
+              <p><strong>Function</strong></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p><span class="packt_screen">L_Quantity</span></p>
+            </td>
+            <td>
+              <p><kbd>Quantity</kbd></p>
+            </td>
+            <td>
+              <p><span class="packt_screen">SUM</span></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p><span class="packt_screen">L_EXTENDEDPRICE</span></p>
+            </td>
+            <td>
+              <p><kbd>Base Price Amount</kbd></p>
+            </td>
+            <td>
+              <p><span class="packt_screen">SUM</span></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p><span class="packt_screen">L_DISCOUNT</span></p>
+            </td>
+            <td>
+              <p><kbd>Discount Rate</kbd></p>
+            </td>
+            <td>
+              <p><span class="packt_screen">SUM</span></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p><span class="packt_screen">L_TAX</span></p>
+            </td>
+            <td>
+              <p><kbd>Tax Rate</kbd></p>
+            </td>
+            <td>
+              <p><span class="packt_screen">Sum</span></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p><span class="packt_screen">C_MKTSEGMENT</span></p>
+            </td>
+            <td>
+              <p><kbd>Marketing Segment</kbd></p>
+            </td>
+            <td>
+              <p><span class="packt_screen">n/a</span></p>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <ol start="8">
+
+        <li>Let's calculate some additional metrics, such as amount with discount and tax. We can create calculated fields at the <span class="packt_screen">Add Aggregate</span> step:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2090 image-border" src="images/014704e9-8a80-400e-a6cb-82cef856e755.png" style="width:35.67em;height:10.92em;" />
+
+      </p>
+
+      <p style="padding-left: 90px">And then we can test the result of this job by adding the <span class="packt_screen">Clean</span> step:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2091 image-border" src="images/cf71518a-6085-4c9c-9ef2-f85a187d91ef.png" style="width:71.17em;height:20.25em;" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <p style="padding-left: 60px">If we check <kbd>Discounted Price Amount</kbd> at the <span class="packt_screen">Clean 3</span> step, we'll find that it's wrong because we broke the level of aggregation. Based on our dataset, we have a discount rate on the line-item level. This means we should calculate the <span class="packt_screen">Discounted Price</span> on the <span class="packt_screen">Item</span> level and then aggregate. We aggregated the discount on the <span class="packt_screen">Marketing Segment</span> level (on the customer level because we have only one customer).</p>
+
+      <p style="padding-left: 60px">In order to fix this, we need multiple aggregate steps. We should change the existing one, and group by <span class="packt_screen">Line Item</span>, <span class="packt_screen">Order Key</span>, and <span class="packt_screen">Marketing Segment</span>. Then we'll add one more aggregate step where we'll aggregate only on <span class="packt_screen">Marketing Segment</span>:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2092 image-border" src="images/37802bf6-af14-445d-b5b6-de29a6cbbcd5.png" style="width:92.75em;height:23.17em;" />
+
+      </p>
+
+      <p style="padding-left: 60px">You can see that we have six line items and four different discount rates.</p>
+
+      <p style="padding-left: 60px">Add one more aggregation step and aggregate on <span class="packt_screen">Marketing Segment</span>. As a result, we'll get the right discounted price.</p>
+
+      <ol start="9">
+
+        <li>Adjust the data type by changing it from <span class="packt_screen">Number (decimal)</span> to <span class="packt_screen">Number (whole)</span>. In order to do this, just click on data type symbol at data pane:</li>
+
+      </ol>
+
+      <p class="mce-root CDPAlignCenter CDPAlign">
+
+        <img src="images/088713cc-de4f-4166-aeed-d1d15c17c305.png" style="width:15.25em;height:22.25em;" />
+
+      </p>
+
+      <ol start="10">
+
+        <li>Create the final step by adding <span class="packt_screen">Output</span>. Before running this, drop the filter and eliminate the sampling:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2093 image-border" src="images/221c141f-1b24-438d-8744-6fcb8dc10a1f.png" style="width:85.00em;height:20.42em;" />
+
+      </p>
+
+      <p style="padding-left: 60px">It took 36 seconds to run.</p>
+
+      <ol start="11">
+
+        <li>Test the result by opening the data source in Tableau Desktop. The data source was saved in My <kbd>Documents</kbd> | <kbd>Tableau Prep</kbd> | <kbd>Data Sources</kbd> | <kbd>Output.tde</kbd>. Open this with Tableau Desktop:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2094 image-border" src="images/ea87c9eb-e4f4-411d-886a-6d9b12b8d7e6.png" style="width:161.33em;height:113.67em;" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

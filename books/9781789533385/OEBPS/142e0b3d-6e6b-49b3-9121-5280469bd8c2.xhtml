@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Connecting to Snowflake</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">Connecting to Snowflake</h1>
+
+    </header>
+
+    <article>
+
+      <p>Snowflake is the leading cloud data warehouse platform. Moreover, it is the first data warehouse that was created for the cloud. In this section, we will launch a Snowflake instance and connect to it with Tableau. Currently, Snowflake is available for AWS and Azure. We are going to use the AWS version of Snowflake.</p>
+
+      <p>Snowflake has a multi-cluster shared architecture, and it separates storage and computes. This allows it to <span>easily</span> scale up and down on the fly without any disruption.</p>
+
+      <p>Snowflake is an SQL data warehouse that supports structured and semi-structured data, such as JSON, AVRO, or XML.</p>
+
+      <p>The Snowflake architecture consists of the following three layers:</p>
+
+      <ul>
+
+        <li><strong>Cloud services</strong>: This is a collection of services such as authentication, and so on</li>
+
+        <li><strong>Query processing</strong>: Snowflake executes queries using a virtual warehouse, for example, an MPP cluster with multiple compute nodes using Amazon EC2 or Azure virtual machines</li>
+
+        <li><strong>Database storage</strong>: Snowflake stores optimized data in Amazon S3 or Azure Blob Storage</li>
+
+      </ul>
+
+      <p class="mce-root"></p>
+
+      <p>Let's take a look at the following diagram that depicts the preceding mentioned layers:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1325 image-border" src="images/3c473280-e39f-4967-85fe-878b4d406fbd.png" style="width:61.75em;height:22.50em;" />
+
+      </p>
+
+      <p>There is the same principle when we allow Snowflake to do the heavy lifting and then, Tableau renders the results. As a result, we don't need to use Tableau extracts.</p>
+
+      <p>With a live connection, we should avoid a custom SQL data source because often it is counterproductive, and could be run multiple times on the dashboard. Tableau itself can generate much more efficient queries.</p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

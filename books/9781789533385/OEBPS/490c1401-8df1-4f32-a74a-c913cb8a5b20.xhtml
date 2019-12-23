@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it…</h1>
+
+    </header>
+
+    <article>
+
+      <ol>
+
+        <li>Start R, open a new script and run the following code block:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px">install.packages('mvoutlier',repos='http://cran.us.r-project.org')<br/>library(Rserve)<br/>Rserve()</pre>
+
+      <ol start="2">
+
+        <li>Open Tableau and connect to the <kbd>age_and_blood_pressure.csv</kbd> file.</li>
+
+        <li>In the main menu toolbar, navigate to <span class="packt_screen">Help</span> and, from the drop-down menu, select <span class="packt_screen">Settings and Performance</span>. From the additional drop-down menu that will open, choose <span class="packt_screen">Manage External Service Connection...</span>.</li>
+
+        <li>In the <span class="packt_screen">Server</span> field, enter <kbd>localhost</kbd>.</li>
+
+        <li>In the <span class="packt_screen">Port</span> field, enter <kbd>6311</kbd>.</li>
+
+        <li>Click on the <span class="packt_screen">Test Connection</span> button.</li>
+
+        <li>After receiving a message that you're successfully connected to the <kbd>RServe</kbd> service, click on <span class="packt_screen">OK</span> to close the notification, and then click on <span class="packt_screen">OK</span> again to exit the <span class="packt_screen">External Service Connection</span> window.</li>
+
+        <li>Drag and drop <span class="packt_screen">Age</span> from <span class="packt_screen">Measures</span> into the <span class="packt_screen">Columns</span> shelf.</li>
+
+        <li>Drag and drop <span class="packt_screen">Blood Pressure</span> from <span class="packt_screen">Measures</span> into the <span class="packt_screen">Rows</span> shelf.</li>
+
+        <li>In the main menu toolbar, navigate to<span> </span><span class="packt_screen">Analysis</span><span> </span>and, from the<span> </span>drop-down<span> </span>menu, select<span> </span><span class="packt_screen">Create Calculated Field...</span>.</li>
+
+        <li>Rename the new calculated field <kbd>Outliers</kbd> and enter the following code:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px">IF SCRIPT_REAL("library(mvoutlier);sign2(cbind(.arg1, .arg2))$wfinal01", AVG([Age]), AVG([Blood Pressure])) == 0 THEN "Outlier" ELSE "OK" END</pre>
+
+      <p class="mce-root"></p>
+
+      <p class="mce-root"></p>
+
+      <p class="mce-root"></p>
+
+      <p class="mceNonEditable"></p>
+
+      <ol start="12">
+
+        <li>In the main menu toolbar, navigate to <span class="packt_screen">Analysis</span> and, in the drop-down menu, deselect <span class="packt_screen">Aggregate Measures</span>. </li>
+
+        <li>Drag and drop <span class="packt_screen">Outliers</span> from <span class="packt_screen">Measures</span> onto <span class="packt_screen">Color</span> in the <span class="packt_screen">Marks</span> card. Our chart clearly shows the multidimensional outliers now, as shown in the following screenshot:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/6897cf63-9e98-4dac-a4c1-ff123f7136f4.png" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it…</h1>
+
+    </header>
+
+    <article>
+
+      <ol>
+
+        <li>Click on the black drop-down arrow in the <span class="packt_screen">Data</span> pane, to the right of <span class="packt_screen">Dimensions</span>.</li>
+
+        <li>Select <span class="packt_screen">Create Calculated Field…</span>. Alternatively, from the main menu toolbar select <span class="packt_screen">Analysis</span>, and choose <span class="packt_screen">Create Calculated Field</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/5a903b2f-89fb-4a4d-998b-4507e5fd82d5.png" style="width:16.08em;height:22.00em;" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <p class="mce-root"></p>
+
+      <ol start="3">
+
+        <li>Rename the field from <span class="packt_screen">Calculation 1</span> to <kbd>Difference from Previous</kbd>. Click on the <span class="packt_screen">Apply</span> button and then click on <span class="packt_screen">OK</span>.</li>
+
+        <li>In the formula pane, type the following expression and click on the <span class="packt_screen">Apply</span> button and then click on <span class="packt_screen">OK</span>:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px">SUM([Civilian Labor Force])-LOOKUP(SUM([Civilian Labor Force]),-1)</pre>
+
+      <p style="padding-left: 60px">Let's see how it looks in the following screenshot:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/4dfe236a-f721-45b6-a7d1-52d6f2f02b6e.png" />
+
+      </p>
+
+      <ol start="5">
+
+        <li>The new calculated field, <span class="packt_screen">Difference from Previous</span>, has appeared under <span class="packt_screen">Measures</span>.</li>
+
+        <li>Drag and drop the new calculated field into <span class="packt_screen">Text</span> in the <span class="packt_screen">Marks</span> cards.</li>
+
+        <li>Drag and drop the new calculated field into the <span class="packt_screen">Rows</span> shelf.</li>
+
+        <li>Drag and drop <span class="packt_screen">Year</span> from <span class="packt_screen">Dimensions</span> into the <span class="packt_screen">Columns</span> shelf:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1333 image-border" src="images/23d51b4b-ae4b-4054-b721-cd0f01a91adf.png" style="width:142.08em;height:73.50em;" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

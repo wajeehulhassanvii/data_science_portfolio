@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it...</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it...</h1>
+
+    </header>
+
+    <article>
+
+      <p>In 2018.2, we can use web extensions to build a Sankey chart. To follow along, use <kbd>Beer 2018.2.twbx</kbd>, <kbd>beers.csv</kbd>, and <kbd>breweries.csv</kbd>.</p>
+
+      <ol>
+
+        <li class="mce-root">Create the <kbd>Select Dimension Left</kbd> parameter:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/723f335e-96e2-494a-96c7-69f17c4e0927.png" />
+
+      </p>
+
+      <ol start="2">
+
+        <li class="mce-root">Create the <kbd>Select Dimension Right</kbd> parameter:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/b30b423a-6edc-4cbb-ae44-30ab5b073ef3.png" />
+
+      </p>
+
+      <ol start="3">
+
+        <li>Create the <kbd>Dimension Left</kbd> parameter:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/539b5f8d-98b5-4baf-9945-ea5c43b5903f.png" style="width:17.08em;height:13.25em;" />
+
+      </p>
+
+      <ol start="4">
+
+        <li>Create the <kbd>Dimension Right</kbd><span> </span>parameter:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/6ca2aba6-ef19-4217-b8f3-e5ddec3bcc7e.png" style="width:16.83em;height:13.17em;" />
+
+      </p>
+
+      <ol start="5">
+
+        <li>Create the <kbd>Chosen Measure</kbd><span> </span>parameter:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/3f5df2a3-737e-4d66-92ef-4fe4f01dcab7.png" style="width:17.50em;height:6.17em;" />
+
+      </p>
+
+      <ol style="font-size: 16px" start="6">
+
+        <li>Create the <kbd>Top Dimension Values</kbd> parameter:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/51efd941-078c-4b54-9600-c57d7b9a3629.png" style="width:45.33em;height:31.42em;" />
+
+      </p>
+
+      <div class="packt_infobox">
+
+        <p>The first six steps are not required, but they give the visualization some fun flexibility. The user can select which categories appear on the left-hand side and the right-hand side of the chart. Also, because there are so many values, which can make the Sankey chart look busy, we've added a top value to filter the dimension values. For this Sankey recipe, we actually only need to create a sheet with two dimensions and one measure.</p>
+
+      </div>
+
+      <ol start="7">
+
+        <li>Add <span class="packt_screen">Dimension Right</span> to the <span class="packt_screen">Columns</span> shelf and the <span class="packt_screen">Filters</span> shelf.</li>
+
+        <li>Add <span class="packt_screen">Dimension Left</span> to the <span class="packt_screen">Rows </span><span>shelf and the <span class="packt_screen">Filters</span> shelf.</span></li>
+
+      </ol>
+
+      <ol start="9">
+
+        <li>Right-click <span class="packt_screen">Dimension Right</span> and <span class="packt_screen">Dimension Left</span> in the <span class="packt_screen">Filters </span>shelf, select <span class="packt_screen">Edit Filter</span>, and set as follows:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/e8dd6f2e-8a32-485c-8430-c565fcb84511.png" style="width:32.83em;height:40.33em;" />
+
+      </p>
+
+      <ol start="10">
+
+        <li>Add <span class="packt_screen">Chosen Measure</span> to <span class="packt_screen">Text</span> in the <span class="packt_screen">Marks</span> card.</li>
+
+      </ol>
+
+      <ol start="11">
+
+        <li>Add a <span class="packt_screen">Percent of Total</span> option in <span class="packt_screen">Table Calculation</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/cfebaf79-b849-4e20-b59c-c8150a2ed8e8.png" style="width:23.08em;height:35.17em;" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <p style="padding-left: 90px">The cross-tab should appear as follows:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/23b416ed-16a0-48d9-8682-5d4c93035c2d.png" />
+
+      </p>
+
+      <ol start="12">
+
+        <li>Add the sheet to a dashboard, as shown in the following screenshot:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/34dcef93-fabb-4e2e-8a1a-1c6486f762f9.png" />
+
+      </p>
+
+      <ol start="13">
+
+        <li>Make the sheet <span class="packt_screen">F<span class="packt_screen">loa</span></span><span class="packt_screen">ting</span> and then minimize it. In this example, we don't want to see the cross-tab. However, the <span class="packt_screen">Show Me More</span> extension requires it to be on the dashboard in order to work:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/06ef6700-6649-4c7f-9f64-2ac958e4811d.png" style="width:14.42em;height:31.83em;" />
+
+      </p>
+
+      <ol start="14">
+
+        <li>Use the <span class="packt_screen">Extension</span> object:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/a7db0d01-a483-48e0-944d-8d553f7b6827.png" style="width:16.92em;height:9.58em;" />
+
+      </p>
+
+      <ol start="15">
+
+        <li>When prompted for the first time, download the <span class="packt_screen">Show Me More</span> web extension by visiting <span class="packt_screen">Extension Gallery</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/574c7867-a506-410c-adc6-e628f92f20a8.png" style="width:27.08em;height:13.83em;" />
+
+      </p>
+
+      <ol start="16">
+
+        <li>You can go to <span class="packt_screen">My Extensions</span> and navigate to your extensions library to choose <span class="packt_screen">Show Me More</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/fda614bf-99d9-415c-949e-508f869bdf62.png" style="width:36.00em;height:12.42em;" />
+
+      </p>
+
+      <ol start="17">
+
+        <li>Click on <span class="packt_screen">Use configure to get started.</span> to begin the configuration:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/de12575f-e8aa-4caa-850b-b3a0777b6c89.png" style="width:16.75em;height:7.33em;" />
+
+      </p>
+
+      <ol start="18">
+
+        <li>Choose <span class="packt_screen">Sankey Diagram</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/54075587-1aaa-4185-ab34-83df1cf045ec.png" />
+
+      </p>
+
+      <ol start="19">
+
+        <li>Select the dimensions and measures as shown in the following screenshot:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/949b7d3d-c057-4ad1-9097-6f519174c952.png" style="width:45.00em;height:19.58em;" />
+
+      </p>
+
+      <p style="padding-left: 90px">We can see the final visualization in the following screenshot:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/239245db-e6f6-45a7-a9f5-d6b9155b842f.png" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

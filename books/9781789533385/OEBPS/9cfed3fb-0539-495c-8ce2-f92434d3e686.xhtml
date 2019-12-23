@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it…</h1>
+
+    </header>
+
+    <article>
+
+      <ol>
+
+        <li>At the GUI, you can click on <span class="packt_screen">Help</span> and choose <span class="packt_screen">Download</span>.</li>
+
+        <li>Download the CLI client (<kbd>snowsql</kbd>) for your OS. In my case, I am using macOS.</li>
+
+        <li>Install the file.</li>
+
+        <li>Connect the Snowflake instance. In our case, we are using macOS. Open a command line and run the following command:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px;"><strong>/Users/anoshind/Applications/SnowSQL.app/Contents/MacOS/snowsql -a &lt;account name&gt; -u &lt;user name&gt;</strong></pre>
+
+      <p style="padding-left: 60px;" class="mce-root">In our case, we have <kbd>-a DZ27900 -u tableaucookbook</kbd>. It will ask for a password. After successful authentication, we connected to Snowflake.</p>
+
+      <ol start="5">
+
+        <li>Now, we can start to create Snowflake objects:
+<ol start="1">
+<li>Run this command to create a database:</li>
+</ol>
+</li>
+
+      </ol>
+
+      <pre style="padding-left: 120px;"><strong>create or replace database sf_tuts;</strong></pre>
+
+      <ul>
+
+        <li style="list-style-type: none;">
+
+          <ol start="2">
+
+            <li>Run this command to create a target table:</li>
+
+          </ol>
+
+        </li>
+
+      </ul>
+
+      <pre style="padding-left: 90px;"><strong>create or replace table emp_basic </strong><strong>(<br/>first_name string, last_name string, email string, streetaddress string,  city string    ,  start_date date );</strong></pre>
+
+      <ul>
+
+        <li style="list-style-type: none;">
+
+          <ol start="3">
+
+            <li>Run this command to create our computing DW. Depending on the size, you can choose the <span>power of your cluste</span><span>r:</span></li>
+
+          </ol>
+
+        </li>
+
+      </ul>
+
+      <pre style="padding-left: 60px;"><strong>create or replace warehouse sf_tuts_wh with </strong><br/><strong> warehouse_size='X-SMALL'   auto_suspend = 180   auto_resume = true        initially_suspended=true;</strong></pre>
+
+      <p style="padding-left: 60px;">You can learn more about pricing options at:</p>
+
+      <p style="padding-left: 60px;" class="mce-root"><a href="https://docs.snowflake.net/manuals/user-guide/credits.html">https://docs.snowflake.net/manuals/user-guide/credits.html</a></p>
+
+      <ol start="6">
+
+        <li>Next, load the files into Snowflake. You should download files from the chapter bundle (five <kbd>.xls</kbd> files) and put them into any directory, where <kbd>snowsql</kbd> can access it. In our case, we will copy them into <kbd>/tmp</kbd>. </li>
+
+        <li>Put file: <kbd>///&lt;path&gt;/employees0*.csv @sf_tuts.public.%emp_basic;</kbd>.</li>
+
+        <li>The Windows syntax will be different: put file <kbd>//C:\&lt;path&gt;\employees0*.csv @sf_tuts.public.%emp_basic;</kbd>.</li>
+
+        <li>This operation will upload and compress (<kbd>.gzip</kbd>) files into the stage for our table, <kbd>emp_basic</kbd>.</li>
+
+        <li>Now, we can copy data into the target table by executing the following command:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px;">copy into emp_basic<br/>  from @%emp_basic<br/>  file_format = (type = csv field_optionally_enclosed_by='"')<br/>  pattern = '.*employees0[1-5].csv.gz'<br/>  on_error = 'skip_file';</pre>
+
+      <p style="padding-left: 60px;">We can see the output in the following screenshot:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-1925 image-border" src="images/1749e2e5-840d-4824-b33b-1e0d507a0b5f.png" style="width:106.33em;height:19.33em;" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <p>As a result, we successfully loaded data from the local machine. Moreover, we can load huge datasets from S3 into Snowflake or other source systems.</p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

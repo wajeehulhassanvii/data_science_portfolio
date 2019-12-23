@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Accessing semi&#x2013;structured data</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">Accessing semi–structured data</h1>
+
+    </header>
+
+    <article>
+
+      <p>In the modern world, often we can meet unstructured data that is generating by machines, apps, sensors, and so on. There are the following two main attributes of semi-structured data that differ it from structure data:</p>
+
+      <ul>
+
+        <li>Semi-structured data can contain n-level hierarchies of nested information</li>
+
+        <li>Structured data always needs a defined schema before loading it. Semi-structured data doesn't need this, so as a result we can create the schema on the fly</li>
+
+      </ul>
+
+      <p>Despite the fact that Tableau supports direct connection to the JSON format, we still have the same issue with big data, when we need more compute resource than Tableau allows us to use and also, we can collect data types such as Avro, ORC, Parquet, and XML.</p>
+
+      <p>Usually, we should parse unstructured data and write into the table. But not with Snowflake; it has a special data type <kbd>VARIANT</kbd> that allows us to store semi-structured data. Moreover, we can easily parse key-value pairs. You can run the following SQL and check how it looks:</p>
+
+      <pre><strong>select * from "SNOWFLAKE_SAMPLE_DATA"."WEATHER"."WEATHER_14_TOTAL" limit 1</strong></pre>
+
+      <p>Let's try to use the Snowflake sample database in order to see how it looks. Unfortunately, Tableau can't parse <kbd>VARIANT</kbd> data type, which is why we should create the SQL for Tableau based on a <kbd>VARIANT</kbd> column.</p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

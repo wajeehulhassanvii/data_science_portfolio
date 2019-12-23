@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>See also</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">See also</h1>
+
+    </header>
+
+    <article>
+
+      <p>There are several ways to create a Sankey chart published on various blogs. Ian Balwin's post on <em>Information Lab</em> is excellent because it is flexible and does not require outside data prep. However, there are many calculations, which can make it hard to follow. But once it's set, there is a great deal of flexibility because of how the dimensions and measures have been created. The following directions are taken from his blog post at<a href="https://www.theinformationlab.co.uk/2018/03/09/build-sankey-diagram-tableau-without-data-prep-beforehand/"> https://www.theinformationlab.co.uk/2018/03/09/build-sankey-diagram-tableau-without-data-prep-beforehand/</a>.</p>
+
+      <p>Use <kbd>Beer.twbx</kbd>, <kbd>beers.csv</kbd>, and <kbd>breweries.csv</kbd> to work through this example:</p>
+
+      <ol>
+
+        <li class="mce-root">Create the <kbd>Select Dimension Left</kbd> parameter or use the same one from the previous recipe:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/66f12e12-8f43-4216-a8f3-816675be7760.png" />
+
+      </p>
+
+      <ol start="2">
+
+        <li class="mce-root">Create the <kbd>Select Dimension Right</kbd> parameter<span> or use the same one from the previous recipe</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/89599c25-c658-426b-abc6-0aae1b090751.png" />
+
+      </p>
+
+      <ol start="3">
+
+        <li>Create the <kbd>Dimension Left</kbd> parameter<span> or use the same one from the previous recipe</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/a75449eb-fe04-4000-9b4e-a6f2b0d996d5.png" style="width:15.83em;height:12.33em;" />
+
+      </p>
+
+      <ol start="4">
+
+        <li>Create the <kbd>Dimension Right</kbd> parameter<span> or use the same one from the previous recipe</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/d9e9ff16-aa8e-41da-a06b-42037f22dbca.png" style="width:16.67em;height:13.08em;" />
+
+      </p>
+
+      <ol start="5">
+
+        <li>Create the <kbd>Chosen Measure</kbd> parameter<span> or use the same one from the previous recipe</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/d505fbb9-9c4d-4997-956c-e4ac49a33916.png" style="width:15.58em;height:5.50em;" />
+
+      </p>
+
+      <ol style="font-size: 16px" start="6">
+
+        <li>Create the<span> </span><kbd>Top Dimension Values</kbd><span> </span>parameter <span>or use the same one from the previous recipe</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/0a393837-a87d-45ad-9668-94be8471dad3.png" style="width:47.75em;height:33.08em;" />
+
+      </p>
+
+      <ol start="7">
+
+        <li>Add<span> </span><span class="packt_screen">Dimension Right</span><span> </span>and<span class="packt_screen"><span><span> </span></span>Dimension Left</span> to<span> the </span><span class="packt_screen">Filters</span><span> </span>shelf.</li>
+
+      </ol>
+
+      <ol start="8">
+
+        <li>Right-click<span> </span><span class="packt_screen">Dimension Right</span><span> </span>and<span> </span><span class="packt_screen">Dimension Left</span><span> </span>in the<span> </span><span class="packt_screen">Filters </span>shelf, select<span> </span><span class="packt_screen">Edit Filter</span>, and set it as follows:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/33fbb1f2-f0b1-4149-ad0a-0ba0282c81d4.png" style="width:32.58em;height:40.00em;" />
+
+      </p>
+
+      <ol start="9">
+
+        <li>Create the <kbd>Path Frame</kbd> parameter:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/70de8438-b5e4-4bbb-8b6a-62ca82d4877e.png" />
+
+      </p>
+
+      <p class="mce-root"></p>
+
+      <ol start="10">
+
+        <li>Create a <kbd>Path Index</kbd> parameter:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/579a77ee-cd7a-49c6-a83c-72a9592151a2.png" style="width:20.83em;height:5.42em;" />
+
+      </p>
+
+      <ol start="11">
+
+        <li>Create the <kbd>T</kbd> parameter:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/8aab4416-5577-4c13-bf05-8add65fdc540.png" style="width:20.83em;height:8.50em;" />
+
+      </p>
+
+      <ol start="12">
+
+        <li>Create the <kbd>Sigmoid</kbd> function:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/c4d882da-d4c2-49bd-9e98-9a40726b7d0e.png" style="width:14.92em;height:5.00em;" />
+
+      </p>
+
+      <ol start="13">
+
+        <li>Create the <kbd>Sankey Arm Size</kbd> parameter:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/8e0bc142-edc6-4ebb-901b-2cc18a73ec2f.png" style="width:29.17em;height:5.67em;" />
+
+      </p>
+
+      <ol start="14">
+
+        <li>Create all the following calculations for the top of the Sankey Arm:
+<ul>
+<li><kbd>Max Position Left</kbd>
+<ul>
+<li><kbd>RUNNING_SUM([Sankey Arm Size])</kbd></li>
+</ul>
+</li>
+<li><kbd>Max Position Left Wrap</kbd>
+<ul>
+<li><kbd>WINDOW_SUM([Max Position Left])</kbd></li>
+</ul>
+</li>
+<li><kbd>Max Position Right</kbd>
+<ul>
+<li><kbd>RUNNING_SUM([Sankey Arm Size])</kbd></li>
+</ul>
+</li>
+<li><kbd>Max Position Right Wrap </kbd>
+<ul>
+<li><kbd><kbd>WINDOW_SUM([Max Position Right])</kbd></kbd></li>
+</ul>
+</li>
+</ul>
+</li>
+
+        <li>Create all of the following calculations for the bottom of the Sankey Arm:
+<ul>
+<li><kbd>Max for Min Position Left</kbd>
+<ul>
+<li><kbd>RUNNING_SUM([Sankey Arm Size])</kbd></li>
+</ul>
+</li>
+<li><kbd>Min Position Left</kbd>
+<ul>
+<li><kbd>RUNNING_SUM([Max for Min Position Left])-[Sankey Arm Size]</kbd></li>
+</ul>
+</li>
+<li><kbd>Min Position Left Wrap</kbd>
+<ul>
+<li><kbd>WINDOW_SUM([Min Position Left])</kbd></li>
+</ul>
+</li>
+<li><kbd>Max for Min Position Right</kbd>
+<ul>
+<li><kbd>RUNNING_SUM([Sankey Arm Size])</kbd></li>
+</ul>
+</li>
+<li><kbd>Min Position Right</kbd>
+<ul>
+<li><kbd>RUNNING_SUM([Max for Min Position Right])-[Sankey Arm Size]</kbd></li>
+</ul>
+</li>
+<li><kbd>Min Position Right Wrap</kbd>
+<ul>
+<li><kbd>WINDOW_SUM([Min Position 2]</kbd></li>
+</ul>
+</li>
+</ul>
+</li>
+
+        <li>Create the <kbd>Sankey Polygons</kbd> calculation as follows:</li>
+
+      </ol>
+
+      <p style="padding-left: 90px" class="CDPAlignCenter CDPAlign">
+
+        <img src="images/8c6d08f1-4e5d-4137-87a7-48b4f60009f3.png" />
+
+      </p>
+
+      <ol start="17">
+
+        <li>Create the <span class="packt_screen">Left Side</span> sheet:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/228426c8-dfa1-48a2-847d-72a222e77e61.png" />
+
+      </p>
+
+      <ol start="18">
+
+        <li>Apply a <span class="packt_screen">Percent of Total</span> option in <span class="packt_screen">Table Calculation</span> to <span class="packt_screen">Chosen Measure</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/2ec29cac-259b-4280-a20b-24a18d2f4c96.png" style="width:22.75em;height:32.58em;" />
+
+      </p>
+
+      <ol start="19">
+
+        <li>Create the <span class="packt_screen">Right Side</span> sheet:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/5651d660-8bae-4de1-a2e6-f90182d0690c.png" />
+
+      </p>
+
+      <ol start="20">
+
+        <li>Apply a <span class="packt_screen">Percent of Total</span> option under <span class="packt_screen">Table Calculation</span> to <span class="packt_screen">Chosen Measure</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/7b3e2562-ca2c-4706-8e30-a03199aa06b8.png" style="width:24.42em;height:35.00em;" />
+
+      </p>
+
+      <ol start="21">
+
+        <li>Create <kbd>INDEX()</kbd> by double-clicking in the <span class="packt_screen">Marks</span> card and typing <kbd>INDEX()</kbd>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/78bed4f9-bd5f-429b-b252-37c95a63dd0b.png" style="width:22.92em;height:19.25em;" />
+
+      </p>
+
+      <ol start="22">
+
+        <li>Apply <span class="packt_screen">INDEX()</span> to the <span class="packt_screen">Color</span> card:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/02fec24f-358f-4cb8-a2e0-58ab07cae82e.png" style="width:26.50em;height:23.67em;" />
+
+      </p>
+
+      <ol start="23">
+
+        <li>Apply a table calculation to <span class="packt_screen">INDEX()</span>, as shown in the following screenshot:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/38a97d18-d1f0-495e-8793-f26a4308ddc2.png" style="width:25.58em;height:31.92em;" />
+
+      </p>
+
+      <ol start="24">
+
+        <li>Create the <span class="packt_screen">Sankey</span> sheet:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/2248b2c7-fbfe-4002-9334-e67e6ce66b48.png" />
+
+      </p>
+
+      <ol start="25">
+
+        <li><span class="packt_screen">Table Calculation</span> for <span class="packt_screen">Sankey Polygons</span>: 
+<ul>
+<li>These are all the table calculations we will need to configure for the <span class="packt_screen">Sankey Polygons</span>:</li>
+</ul>
+</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/b35f2bdd-c8c5-4dc7-853f-1cae08df5791.png" style="width:20.17em;height:30.00em;" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Path Index</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/146c281e-1ab7-4223-803c-1de6736c4b34.png" style="width:23.75em;height:35.25em;" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Max Position Left Wrap</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/7af91eea-cab7-4b06-8b26-dc71b5bb2836.png" style="width:24.08em;height:37.92em;" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Max Position Left</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/c0d4d8d4-1444-4687-8e7e-71b4efeee981.png" style="width:23.25em;height:34.58em;" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Sankey Arm Size</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/af6eec65-a2ec-474d-ac74-d773c9cd12e9.png" style="width:23.08em;height:36.25em;" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Max Position Right Wrap</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/c837021d-7b42-4cb9-9cf8-1ed9f82581a7.png" style="width:23.58em;height:36.92em;" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Max Position Right</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/f687b124-4769-49ff-8350-187695041654.png" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Min Position Left Wrap</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/590781c5-ca1a-4388-a3a2-dbfa1b33d0f4.png" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Min Position Left</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/0e5316a8-f216-410c-a2bc-717c11ed5850.png" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Max for Min Position Left</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/8d9caa04-6d9d-4c9b-9ca8-f16fc23de9dc.png" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Min Position Right Wrap</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/561e447a-7138-45a6-8ad0-d52240d77e00.png" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Min Position Right</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/638e979a-b2dd-46bb-b492-b9cc91c27106.png" />
+
+      </p>
+
+      <ol start="17">
+
+        <li style="list-style-type: none">
+
+          <ul>
+
+            <li><span class="packt_screen">Max for Min Position Right</span>:</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/85bb5c18-5252-4f3b-8e15-fb14fc375afd.png" />
+
+      </p>
+
+      <p style="padding-left: 90px">You will see the final dashboard in the following screenshot:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/f5e5b9f8-9351-4eb4-8310-dcae456cc987.png" style="width:60.42em;height:49.17em;" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

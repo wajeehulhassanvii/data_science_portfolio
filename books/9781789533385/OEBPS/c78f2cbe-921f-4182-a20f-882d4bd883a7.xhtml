@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Regression with random forest</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">Regression with random forest</h1>
+
+    </header>
+
+    <article>
+
+      <p>In the previous recipe, <em>Forecasting based on multiple regression</em>, we learned how to use multiple variables in order to predict the variable that we are interested in. Sometimes, we have a lot of variables and we are not sure which ones we should choose as predictors. Also, predictor variables can be related among themselves in different ways, which complicates the setup of the model and the interpretation of the results. In recent years, random forest algorithm has gained popularity among analysts and data scientists, as they provide a solution to these problems. The random forest algorithm is based on decision tree approach.  This approach can be used to predict both discrete class membership (classification) and exact values of a continuous variable (regression). In this recipe, we will cover the latter. Regression-based on decision tree works by iteratively splitting cases in the dataset into increasingly homogeneous groups. Looping through all variables the algorithm searches for the one that splits cases into the groups. so that cases within each group are as similar as possible with regards to the predicted variable. This process continues, resulting in the three with more and more branches and data that is partitioned into smaller and smaller subsamples. Random forest is an enhanced version of the decision tree algorithm that builds many decision threes using randomly selected subsamples of both variables and cases.</p>
+
+      <p>Results obtained by each of the trees are compiled into a final single solution. Visualized in R, a random forest model looks like this:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2637 image-border" src="images/ff7d55a2-b17c-47f0-a91d-1d8a16366c2b.png" style="width:32.08em;height:27.42em;" />
+
+      </p>
+
+      <div class="packt_infobox">It is not possible to create a tree chart like the one shown above in Tableau—it is possible to create it directly in R though. You can learn how in the next chapter, <q>Advanced Analytics with Tableau.</q></div>
+
+      <p><span>We will use the</span> <kbd>hormonal_response_to_excercise.csv</kbd> <span>dataset. Our main task will be to predict the level of adrenocorticotropic hormone at the maximum level of physical exertion. In order to take into consideration different factors that can influence an </span>ACHT <span>spike during exercise, we are going to include the following variables in our model: cortisol level at rest, alcohol and tobacco consumption, height, age, and weight. This variable can be also interrelated: for example, smoking and drinking, height, and weight. Baseline cortisol may be also related to tobacco and alcohol consumption. For this reason, the random forest can make our life easier.</span></p>
+
+      <p class="mce-root"></p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

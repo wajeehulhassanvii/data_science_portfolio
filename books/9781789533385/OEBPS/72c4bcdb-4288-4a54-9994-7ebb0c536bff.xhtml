@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How it works...</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How it works...</h1>
+
+    </header>
+
+    <article>
+
+      <p>First, we created a text table to work through our calculations. We then added the dimensions of interest to the <span class="packt_screen">Rows</span> shelf and the measure of interest to the <span class="packt_screen">Text</span> shelf. </p>
+
+      <p>For column height, we created <kbd>Percent of Total for Raised Hands</kbd>, which we compute by using <span class="packt_screen">Parentschool Satisfaction</span>. This allows us to see 100% for each <span class="packt_screen">Gender</span> and <span class="packt_screen">Grade</span> combination, which is our column height. We add this calculation to the <span class="packt_screen">Measure Values</span> card.</p>
+
+      <p>In order to get our column widths, we created the <span class="packt_screen">Raised Hands per Column</span> calculation, which calculates the sum for all hand raises for each combination of <span class="packt_screen">Gender</span> and <span class="packt_screen">Grade</span>. We then add the calculation to the <span class="packt_screen">Measure Values</span> card.</p>
+
+      <p>Next, we created <span class="packt_screen"># of Raised Hands, Grade, Gender ID, Parentschool Satisfaction</span> to help order the columns of each grade and gender correctly along the x-axis. This calculation is building a running total based on raised hands per column. </p>
+
+      <p>It does this math by going through the following checks: </p>
+
+      <ul>
+
+        <li>Is it the first row in the partition then return this value?</li>
+
+        <li>Has the grade changed then add this value and the previous value?</li>
+
+        <li>Has the gender changed? If it has, add this value and the previous value; otherwise we have to return the previous value.</li>
+
+      </ul>
+
+      <p>Then we began to create the visualization. We moved <span class="packt_screen">Measure Values</span> from <span class="packt_screen">Text</span> to <span class="packt_screen">Detail</span>; move <span class="packt_screen">Grade ID</span>, <span class="packt_screen">Gender</span>, and <span class="packt_screen">Parentschool Satisfaction</span> to <span class="packt_screen">Detail</span>. We m<span>oved Sum(Raised Hands) with the percent of total calculation to the <span class="packt_screen">Rows</span> shelf, and r</span>emoved <span class="packt_screen">Measure Names</span> from the <span class="packt_screen">Columns</span> shelf. At this point, we have a stacked bar.</p>
+
+      <p>We moved <span class="packt_screen"># of Raised Hands, Grade, Gender ID, Parentschool Satisfaction</span> to the <span class="packt_screen">Columns</span> shelf. Next, we changed the <span class="packt_screen">S<span>catter Plot</span></span> <span>mark type to <span class="packt_screen">Bar</span>. To get the column widths, we m</span>ove <span class="packt_screen">Raised Hands per Column</span> from <span class="packt_screen">Measure Values</span> to <span class="packt_screen">Size</span> and set it to <span class="packt_screen"><span class="packt_screen">Fixed</span></span> and<span class="packt_screen"> Alignment</span> to<span class="packt_screen"> Right</span>.</p>
+
+      <p>In order to color our visualization, we created a <span class="packt_screen">Gender</span> and <span class="packt_screen">Parentschool Satisfaction</span> combined field that we add to <span class="packt_screen">Color</span>. Finally, to make <span class="packt_screen">Gender</span> more visible, we added it to <span class="packt_screen">Label</span>.</p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

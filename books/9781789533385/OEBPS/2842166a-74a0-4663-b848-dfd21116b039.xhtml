@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it&#x2026;</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it…</h1>
+
+    </header>
+
+    <article>
+
+      <ol>
+
+        <li>Launch R and open a new script by selecting <span class="packt_screen">File</span> and then <span class="packt_screen">New script</span>.</li>
+
+        <li>In the <span class="packt_screen">R Editor</span> window, enter the following code. Make sure to replace all of the file paths with the paths leading to the appropriate locations on your device. After pasting the paths, make sure to replace the backslashes with double backslashes, as in the following code block:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px">install.packages('rpart',repos='http://cran.us.r-project.org')<br/>library(rpart)<br/>cars &lt;- read.table("C:\\!Slaven\\6 KNJIGA\\4 Advanced analytics\\4 decision tree\\new_or_used_car.csv", header=T, sep=",")<br/>fit &lt;- rpart(FuturePurchase ~ Age + Gender + Education + FamilyStatus + CurrentCar + AgeOfCurrentCar + MunicipalityType, method="class", data=cars)<br/>plot(fit, uniform=TRUE, main="Classification of new cars buyers")<br/>text(fit, all=TRUE, cex=.8)</pre>
+
+      <ol start="3">
+
+        <li>Run the entire block of code by selecting it clicking the <span class="packt_screen">Run</span> button <img src="images/525277dc-7f51-41d7-b3f7-0abad6c0e1e9.png" style="width:2.50em;height:2.42em;" />or by pressing <em>Ctrl</em> + <em>R</em> on your keyboard.</li>
+
+        <li>In order to make the connection with Tableau possible, call the <kbd>Rserve</kbd> library by running the following code:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px">library(Rserve)<br/>Rserve()</pre>
+
+      <ol start="5">
+
+        <li>Open Tableau and connect to the <kbd>new_or_used_car.csv</kbd> dataset.</li>
+
+        <li>In the main menu toolbar, navigate to <span class="packt_screen">Help</span> and, from the drop-down menu, select <span class="packt_screen">Settings and Performance</span>. From the additional drop-down menu that will open, select <span class="packt_screen">Manage External Service Connection</span>...:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2030 image-border" src="images/78204171-2b3e-468d-b3c0-4c5301799b95.png" style="width:42.08em;height:33.92em;" />
+
+      </p>
+
+      <ol start="7">
+
+        <li>In the <span class="packt_screen">Server</span> field, enter <kbd>localhost</kbd>.</li>
+
+        <li>In the <span class="packt_screen">Port</span> field, enter <kbd>6311</kbd>.</li>
+
+        <li>Click on the <span class="packt_screen">Test Connection</span> button:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2643 image-border" src="images/2d902073-4bda-4345-b9e3-33887b3847a9.png" style="width:26.92em;height:18.17em;" />
+
+      </p>
+
+      <ol start="10">
+
+        <li>After receiving the message that you're successfully connected to the <kbd>RServe</kbd> service, click on <span class="packt_screen">OK</span> to exit the notification, and then click on <span class="packt_screen">OK</span> again to exit the <span class="packt_screen">External Service Connection</span> window:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2032 image-border" src="images/3a52c15f-3c76-4402-bd2e-1094973e6502.png" style="width:45.17em;height:11.67em;" />
+
+      </p>
+
+      <ol start="11">
+
+        <li>Open a new sheet.</li>
+
+        <li>Drag and drop <span class="packt_screen">Future Purchase</span> from <span class="packt_screen">Dimensions</span> into the <span class="packt_screen">Columns</span> shelf.</li>
+
+        <li>Drag and drop <span class="packt_screen">Id</span> from <span class="packt_screen">Dimensions</span> onto <span class="packt_screen">Tooltip</span> in the <span class="packt_screen">Marks</span> card.</li>
+
+        <li>In the main menu toolbar, navigate to <span class="packt_screen">Analysis</span> and, from the drop-down menu, select <span class="packt_screen">Create Calculated Field...</span>.</li>
+
+      </ol>
+
+      <p> </p>
+
+      <ol start="15">
+
+        <li>Rename the new calculated field to <q><span class="packt_screen">Prediction</span></q> and enter the following code block:</li>
+
+      </ol>
+
+      <pre style="padding-left: 60px">SCRIPT_STR<br/>('library(rpart);<br/>fit = rpart(FuturePurchase ~ Age + Gender + Education + FamilyStatus + CurrentCar + AgeOfCurrentCar + MunicipalityType,<br/>method="class",<br/>data.frame(FuturePurchase = .arg1,<br/>Age =.arg2,<br/>Gender =.arg3,<br/>Education =.arg4,<br/>FamilyStatus =.arg5,<br/>CurrentCar =.arg6,<br/>AgeOfCurrentCar =.arg7,<br/>MunicipalityType=.arg8));<br/>io&lt;-predict(fit, type = "prob");colnames(io)[apply(io,1,which.max)]',<br/>ATTR([Future Purchase]),<br/>AVG([Age]),<br/>ATTR([Gender]),<br/>ATTR([Education]),<br/>ATTR([Family Status]),<br/>ATTR([Current Car]),<br/>AVG([Age Of Current Car]),<br/>ATTR([Municipality Type]))</pre>
+
+      <ol start="16">
+
+        <li>Click <span class="packt_screen">OK</span> to exit the calculated field window.</li>
+
+        <li>Drag and drop <span class="packt_screen">Predictions</span> from <span class="packt_screen">Measures</span> onto <span class="packt_screen">Color</span> in the <span class="packt_screen">Marks</span> card.</li>
+
+        <li>In main menu toolbar, go to <span class="packt_screen">Analysis</span> and <span>deselect </span><span class="packt_screen">Aggregate Measures</span>.</li>
+
+        <li>In the drop-down menu, change <span class="packt_screen">Standard</span> to <span class="packt_screen">Entire Vie</span><span class="packt_screen">w</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign"><br/>
+<img class="aligncenter size-full wp-image-2033 image-border" src="images/e7dc55f7-92ca-4714-8327-155062a5f866.png" style="width:9.83em;height:10.00em;" /></p>
+
+      <p class="mce-root"></p>
+
+      <p style="padding-left: 90px">In the following screenshot, we can see that we finished our chart showing the actual and predicted classification of customers:</p>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/106a8356-c9e5-42ac-b297-c8a76ef6a94e.png" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>

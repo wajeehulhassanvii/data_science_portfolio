@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:pls="http://www.w3.org/2005/01/pronunciation-lexicon" xmlns:ssml="http://www.w3.org/2001/10/synthesis" xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to do it...</title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="core.css" />
+</head>
+<body>
+  <div id="sbo-rt-content"><section>
+
+    <header>
+
+      <h1 class="header-title">How to do it...</h1>
+
+    </header>
+
+    <article>
+
+      <p>To follow along, open the Marimekko packaged workbook: <kbd>Mekko.twbx</kbd> and <kbd>xAPI-Edu-Data.csv</kbd>. We are going to compare gender, parent satisfaction with school, and student participation by raised hands.</p>
+
+      <div class="packt_tip">It is recommended you start with a text table to get the calculations correct.</div>
+
+      <ol>
+
+        <li>Add the dimensions of interest to the <span class="packt_screen">Rows</span> shelf. We are going to add <span class="packt_screen">Grade ID</span>, <span class="packt_screen">Gender</span>, and <span class="packt_screen">Parentschool Satisfaction</span>.</li>
+
+        <li>Add the <span class="packt_screen">Raised Hands</span> to the <span class="packt_screen">Text</span> shelf in the <span class="packt_screen">Marks</span> card:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/82cf01f1-8e33-4781-b970-b206855a4a62.png" style="width:16.75em;height:13.17em;" />
+
+      </p>
+
+      <ol start="3">
+
+        <li>Add the <span class="packt_screen">Percent of Total</span> option in <span class="packt_screen">Table Calculation</span>, and under <span class="packt_screen">Compute Using</span> select <span class="packt_screen">Parentschool Satisfaction</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/8eb62224-02da-41d5-9f14-0e1d6a1c93ef.png" style="width:20.75em;height:36.17em;" />
+
+      </p>
+
+      <ol start="4">
+
+        <li>Double-click on <span class="packt_screen">Measure Values</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/68a4958c-e26d-40a4-b445-408d81e49430.png" style="width:22.92em;height:2.08em;" />
+
+      </p>
+
+      <ol start="5">
+
+        <li>Add the <span class="packt_screen">Raised Hands</span> to the <span class="packt_screen">Measure Values</span> card:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2735 image-border" src="images/2b4a5ca0-7615-4d5c-852c-acb444d4e237.png" style="width:23.83em;height:9.25em;" />
+
+      </p>
+
+      <ol start="6">
+
+        <li>Create calculation <kbd>Raised Hands per Column</kbd>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/b472fff2-2b53-4df4-989d-82a5942b18f9.png" style="width:34.67em;height:5.33em;" />
+
+      </p>
+
+      <ol start="7">
+
+        <li>Add <span class="packt_screen">Raised Hands per Column</span> to the <span class="packt_screen">Measure Values</span> card:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/08469fbc-93bd-40ee-9103-1713f953183f.png" style="width:19.25em;height:7.83em;" />
+
+      </p>
+
+      <ol start="8">
+
+        <li>Create <span class="packt_screen">Calculation # of Raised Hands, Grade, Gender ID</span>, <span class="packt_screen">Parentschool Satisfaction</span> and add it to the <span class="packt_screen">Measures Value</span> card. This calculation creates somewhat of a running total summary for grades and genders. This value will be the <em>x</em> axis:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/bdedce33-e95c-4193-8e37-22be8ebd830a.png" style="width:35.17em;height:21.42em;" />
+
+      </p>
+
+      <ol start="9">
+
+        <li class="CDPAlignLeft CDPAlign">We've completed the calculation work in order to make the visualization. Your grid should look as follows<span>:</span></li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/3e6d6e39-016b-4821-8629-50d3fafd3263.png" style="width:50.92em;height:13.17em;" />
+
+      </p>
+
+      <ol start="10">
+
+        <li>Move <span class="packt_screen">Measure Values</span> from <span class="packt_screen">Text</span> to <span class="packt_screen">Detail</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/f34beff2-0de3-41a6-86fd-f748fa439168.png" style="width:20.17em;height:15.00em;" />
+
+      </p>
+
+      <ol start="11">
+
+        <li>Move <span class="packt_screen">Grade ID</span>, <span class="packt_screen">Gender</span>, and <span class="packt_screen">Parentschool Satisfaction</span> to <span class="packt_screen">Detail</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/89dbadab-90dd-4a82-afe0-63b9df1ae546.png" style="width:19.83em;height:20.25em;" />
+
+      </p>
+
+      <ol start="12">
+
+        <li>Move <span class="packt_screen">Sum(Raised Hands)</span> with the <span class="packt_screen">Percent of Total</span> calculation to the <span class="packt_screen">Rows</span> shelf:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/4e773fb5-82f8-4731-bf3f-2b28fcca421d.png" style="width:24.33em;height:2.42em;" />
+
+      </p>
+
+      <ol start="13">
+
+        <li>Remove <span class="packt_screen">Measure Names</span> from the <span class="packt_screen">Columns</span> shelf:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/b148fc07-e016-48fa-9438-80a1bc3c5de8.png" style="width:20.92em;height:4.75em;" />
+
+      </p>
+
+      <ol start="14">
+
+        <li>We have a stacked bar at this step:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/df52a7a5-b925-44bb-8513-387d5c043fde.png" style="width:8.17em;height:13.42em;" />
+
+      </p>
+
+      <ol start="15">
+
+        <li>Move # <span class="packt_screen">of Raised Hands, Grade, Gender ID</span>, <span class="packt_screen">Parentschool Satisfaction</span> to the <span class="packt_screen">Columns</span> shelf:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/76dce362-3701-468d-b073-3f9ffa420d0f.png" style="width:21.33em;height:4.83em;" />
+
+      </p>
+
+      <ol start="16">
+
+        <li>Change the <span class="packt_screen">Scatter Plot</span> mark type to <span class="packt_screen">Bar</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/146019e2-b83b-47b8-9506-9de0989ea097.png" style="width:18.17em;height:8.83em;" />
+
+      </p>
+
+      <ol start="17">
+
+        <li>Move <span class="packt_screen">Raised Hands per Column</span> from <span class="packt_screen">Measure Values</span> to <span class="packt_screen">Size</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/ff4ae94d-faf3-4e65-a415-9918f4aa35b2.png" style="width:17.50em;height:23.67em;" />
+
+      </p>
+
+      <ol start="18">
+
+        <li>Set <span class="packt_screen">Size</span> to <span class="packt_screen">Fixed</span> and <span class="packt_screen">Alignment</span> to <span class="packt_screen">Right</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="alignnone size-full wp-image-2726 image-border" src="images/00f544fa-ece2-44ce-a53b-36d40f4f5df7.png" style="width:15.83em;height:15.08em;" />
+
+      </p>
+
+      <ol start="19">
+
+        <li>Create a <span class="packt_screen">Gender</span> and <span class="packt_screen">Parentschool satisfaction</span> combined field, as shown in the following screenshot:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2747 image-border" src="images/32a32497-4322-4c3a-8c06-659fce69b4a3.png" style="width:33.33em;height:19.50em;" />
+
+      </p>
+
+      <ol start="20">
+
+        <li>Add the combined field to <span class="packt_screen">Color</span>:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img style="font-size: 1em;text-align: center;color: #333333;width:22.75em;height:14.33em;" src="images/1cf5e128-76a6-4b4a-b144-725d36182351.png" />
+
+      </p>
+
+      <ol start="21">
+
+        <li>Manually sort by <span class="packt_screen">Gender &amp; Parentschool Satisfaction</span>:</li>
+
+      </ol>
+
+      <ul>
+
+        <li style="padding-left: 30px">Right-click on this dimension in the marks card and select <span class="packt_screen">Sort</span>:</li>
+
+      </ul>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="aligncenter size-full wp-image-2749 image-border" src="images/ac5dc17b-9469-4ac9-a735-586c41f21b2c.png" style="width:22.67em;height:18.67em;" />
+
+      </p>
+
+      <ul>
+
+        <li style="padding-left: 30px">Choose <span class="packt_screen">Manual Sort</span> and make it appear as follows:</li>
+
+      </ul>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img src="images/5654b504-9944-4a4c-8794-3ff4d74b18ee.png" style="width:20.83em;height:21.67em;" />
+
+      </p>
+
+      <ol start="22">
+
+        <li> This should produce the following chart. Second, seventh, and eighth graders raise their hands more in class than other grades. Parents with students who raise their hands in class were generally happier with the school. High school students do not raise their hands in class, as shown in the following screenshot:</li>
+
+      </ol>
+
+      <p class="CDPAlignCenter CDPAlign">
+
+        <img class="alignnone size-full wp-image-2723 image-border" src="images/458c6c7e-c4a4-48be-98e3-1ecdac79b5cc.png" style="width:51.17em;height:50.67em;" />
+
+      </p>
+
+    </article>
+
+  </section>
+
+</div>
+</body>
+</html>
