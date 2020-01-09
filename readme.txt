@@ -25,7 +25,6 @@
 │   ├── time resampling.ipynb
 │   └── time shifting.ipynb
 ├── Google Colab
-│   └── google_colab_basic_setup.txt
 ├── handson-ml2
 │   ├── 01_the_machine_learning_landscape.ipynb
 │   ├── 02_end_to_end_machine_learning_project.ipynb
@@ -46,58 +45,19 @@
 │   ├── 17_autoencoders_and_gans.ipynb
 │   ├── 18_reinforcement_learning.ipynb
 │   ├── 19_training_and_deploying_at_scale.ipynb
-│   ├── apt.txt
 │   ├── book_equations.ipynb
 │   ├── changes_in_2nd_edition.md
 │   ├── environment-windows.yml
 │   ├── environment.yml
 │   ├── extra_gradient_descent_comparison.ipynb
-│   ├── images
-│   │   ├── ann
-│   │   │   └── README
-│   │   ├── autoencoders
-│   │   │   └── README
-│   │   ├── classification
-│   │   │   └── README
-│   │   ├── cnn
-│   │   │   └── README
-│   │   ├── decision_trees
-│   │   │   └── README
-│   │   ├── deep
-│   │   │   └── README
-│   │   ├── distributed
-│   │   │   └── README
-│   │   ├── end_to_end_project
-│   │   │   └── README
-│   │   ├── ensembles
-│   │   │   └── README
-│   │   ├── fundamentals
-│   │   │   └── README
-│   │   ├── nlp
-│   │   │   └── README
-│   │   ├── rl
-│   │   │   ├── breakout.gif
-│   │   │   └── README
-│   │   ├── rnn
-│   │   │   └── README
-│   │   ├── svm
-│   │   │   └── README
-│   │   ├── tensorflow
-│   │   │   └── README
-│   │   ├── training_linear_models
-│   │   │   └── README
-│   │   └── unsupervised_learning
-│   │       └── README
 │   ├── index.ipynb
 │   ├── INSTALL.md
 │   ├── LICENSE
 │   ├── math_linear_algebra.ipynb
 │   ├── README.md
-│   ├── requirements.txt
 │   ├── tools_matplotlib.ipynb
 │   ├── tools_numpy.ipynb
 │   └── tools_pandas.ipynb
-├── images
 ├── kaggle
 ├── machine learning
 ├── Machine Learning ALGOS
@@ -129,13 +89,9 @@
 ├── NLP
 │   ├── 16_nlp_with_rnns_and_attention - google colab.ipynb
 │   ├── 16_nlp_with_rnns_and_attention.ipynb
-│   ├── images
-│   │   └── nlp
 │   └── Shakespeare HOML _ local.ipynb
 ├── numpy
 ├── python
-│   └── diff bw ast args and  ast ast kargs.txt
-├── readme.txt
 ├── retail
 │   └── five-point summary .ipynb
 ├── scikit-learn
@@ -156,6 +112,5 @@
     │   ├── L8 - Time Series.ipynb
     │   └── Solution Classifying Images of Flower.ipynb
     └── Natural Language Processing 
-        └── input.txt
 
-50 directories, 108 files
+29 directories, 84 files
