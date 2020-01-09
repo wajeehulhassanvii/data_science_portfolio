@@ -65,21 +65,6 @@
 │   └── five-point summary .ipynb
 ├── scikit-learn
 ├── scipy
-├── spark
-└── Udacity
-    ├── Intro To Tensorflow for Deep Learning
-    │   ├── Exercise - Classify Images of Flowers.ipynb
-    │   ├── Exercise - Flowers with Transfer Learning.ipynb
-    │   ├── L2 - Converting Celsios to Fahrenheit.ipynb
-    │   ├── L2 - Fashion MNIST.ipynb
-    │   ├── L4 - Image Classification CNN.ipynb
-    │   ├── L5 - CNN improvement.ipynb
-    │   ├── L5 - Going  Further With CNNs.ipynb
-    │   ├── L6 - Transfer Learning.ipynb
-    │   ├── L7 Load and Save.ipynb
-    │   ├── L8 - Naive Forecasting.ipynb
-    │   ├── L8 - Time Series.ipynb
-    │   └── Solution Classifying Images of Flower.ipynb
-    └── Natural Language Processing 
+└── spark
 
-31 directories, 51 files
+28 directories, 39 files
