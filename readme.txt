@@ -13,7 +13,6 @@
 │       └── Ufuncs Index Preservation, axis.ipynb
 ├── datasets
 │   ├── ai_for_finance
-│   │   └── finance_yahoo_AAPL_2009_2019.csv
 │   ├── Applications
 │   ├── deep_learning_a-z
 │   │   ├── additional_readings
@@ -23,7 +22,6 @@
 │   │   │   │   ├── ann_homework_solution.py
 │   │   │   │   ├── ann.py
 │   │   │   │   ├── categorical_data.py
-│   │   │   │   ├── Churn_Modelling.csv
 │   │   │   │   ├── classification_template.py
 │   │   │   │   ├── evaluating_improving_tuning.py
 │   │   │   │   └── Installations_Instructions.pdf
@@ -43,19 +41,12 @@
 │   │   │   │   │   ├── allbut.pl
 │   │   │   │   │   ├── mku.sh
 │   │   │   │   │   ├── README
-│   │   │   │   │   ├── u1.base
 │   │   │   │   │   ├── u1.test
-│   │   │   │   │   ├── u2.base
 │   │   │   │   │   ├── u2.test
-│   │   │   │   │   ├── u3.base
 │   │   │   │   │   ├── u3.test
-│   │   │   │   │   ├── u4.base
 │   │   │   │   │   ├── u4.test
-│   │   │   │   │   ├── u5.base
 │   │   │   │   │   ├── u5.test
-│   │   │   │   │   ├── ua.base
 │   │   │   │   │   ├── ua.test
-│   │   │   │   │   ├── ub.base
 │   │   │   │   │   ├── ub.test
 │   │   │   │   │   ├── u.data
 │   │   │   │   │   ├── u.genre
@@ -65,11 +56,8 @@
 │   │   │   │   │   └── u.user
 │   │   │   │   ├── ml-1m
 │   │   │   │   │   ├── movies.dat
-│   │   │   │   │   ├── ratings.csv
 │   │   │   │   │   ├── ratings.dat
 │   │   │   │   │   ├── README
-│   │   │   │   │   ├── test_set.csv
-│   │   │   │   │   ├── training_set.csv
 │   │   │   │   │   └── users.dat
 │   │   │   │   └── rbm.py
 │   │   │   └── __MACOSX
@@ -111,19 +99,15 @@
 │   │   │   │   └── Mega_Case_Study
 │   │   │   └── Mega_Case_Study
 │   │   │       ├── ann.py
-│   │   │       ├── Credit_Card_Applications.csv
 │   │   │       ├── mega_case_study.py
 │   │   │       ├── minisom.py
 │   │   │       └── som.py
 │   │   ├── P16-Recurrent_Neural_Networks
-│   │   │   ├── Google_Stock_Price_Test.csv
-│   │   │   ├── Google_Stock_Price_Train.csv
 │   │   │   └── rnn.py
 │   │   └── P16-Self-Organizing-Maps
 │   │       ├── __MACOSX
 │   │       │   └── Self_Organizing_Maps
 │   │       └── Self_Organizing_Maps
-│   │           ├── Credit_Card_Applications.csv
 │   │           ├── minisom.py
 │   │           └── som.py
 │   ├── Learning
@@ -144,7 +128,6 @@
 │   ├── machine_learning_a-z
 │   │   ├── Data_Preprocessing
 │   │   │   ├── categorical_data.py
-│   │   │   ├── Data.csv
 │   │   │   ├── data_preprocessing_template.py
 │   │   │   └── missing_data.py
 │   │   ├── Machine Learning A-Z Template Folder
@@ -212,19 +195,16 @@
 │   │   ├── P14-Apriori-Python
 │   │   │   ├── Apriori_Python
 │   │   │   │   ├── apriori.py
-│   │   │   │   ├── apyori.py
-│   │   │   │   └── Market_Basket_Optimisation.csv
+│   │   │   │   └── apyori.py
 │   │   │   └── __MACOSX
 │   │   │       └── Apriori_Python
 │   │   ├── P14-Apriori-R
 │   │   │   ├── Apriori
-│   │   │   │   └── Market_Basket_Optimisation.csv
 │   │   │   └── __MACOSX
 │   │   │       └── Apriori
 │   │   ├── P14-Artificial-Neural-Networks
 │   │   │   ├── Artificial_Neural_Networks
-│   │   │   │   ├── ann.py
-│   │   │   │   └── Churn_Modelling.csv
+│   │   │   │   └── ann.py
 │   │   │   └── __MACOSX
 │   │   │       └── Artificial_Neural_Networks
 │   │   ├── P14-Classification-Pros-Cons.pdf
@@ -256,73 +236,62 @@
 │   │   ├── P14-Decision-Tree-Classification
 │   │   │   ├── Decision_Tree_Classification
 │   │   │   │   ├── classification_template.py
-│   │   │   │   ├── decision_tree_classification.py
-│   │   │   │   └── Social_Network_Ads.csv
+│   │   │   │   └── decision_tree_classification.py
 │   │   │   └── __MACOSX
 │   │   │       └── Decision_Tree_Classification
 │   │   ├── P14-Decision-Tree-Regression
 │   │   │   ├── Decision_Tree_Regression
 │   │   │   │   ├── decision_tree_regression.py
-│   │   │   │   ├── Position_Salaries.csv
 │   │   │   │   └── regression_template.py
 │   │   │   └── __MACOSX
 │   │   │       └── Decision_Tree_Regression
 │   │   ├── P14-Eclat
 │   │   │   ├── Eclat
-│   │   │   │   └── Market_Basket_Optimisation.csv
 │   │   │   └── __MACOSX
 │   │   │       └── Eclat
 │   │   ├── P14-Hierarchical-Clustering
 │   │   │   ├── Hierarchical_Clustering
 │   │   │   │   ├── data_preprocessing_template.py
-│   │   │   │   ├── hc.py
-│   │   │   │   └── Mall_Customers.csv
+│   │   │   │   └── hc.py
 │   │   │   └── __MACOSX
 │   │   │       └── Hierarchical_Clustering
 │   │   ├── P14-Homework-Solutions
 │   │   │   ├── Homework_Solutions
-│   │   │   │   ├── 50_Startups.csv
 │   │   │   │   ├── data_preprocessing_template.py
 │   │   │   │   └── multiple_linear_regression.py
 │   │   │   └── __MACOSX
 │   │   │       └── Homework_Solutions
 │   │   ├── P14-Kernel-PCA
 │   │   │   ├── Kernel_PCA
-│   │   │   │   ├── kernel_pca.py
-│   │   │   │   └── Social_Network_Ads.csv
+│   │   │   │   └── kernel_pca.py
 │   │   │   └── __MACOSX
 │   │   │       └── Kernel_PCA
 │   │   ├── P14-Kernel-SVM
 │   │   │   ├── Kernel_SVM
 │   │   │   │   ├── classification_template.py
-│   │   │   │   ├── kernel_svm.py
-│   │   │   │   └── Social_Network_Ads.csv
+│   │   │   │   └── kernel_svm.py
 │   │   │   └── __MACOSX
 │   │   │       └── Kernel_SVM
 │   │   ├── P14-K-Means
 │   │   │   ├── K_Means
 │   │   │   │   ├── data_preprocessing_template.py
-│   │   │   │   ├── kmeans.py
-│   │   │   │   └── Mall_Customers.csv
+│   │   │   │   └── kmeans.py
 │   │   │   └── __MACOSX
 │   │   │       └── K_Means
 │   │   ├── P14-K-Nearest-Neighbors
 │   │   │   ├── K_Nearest_Neighbors
 │   │   │   │   ├── classification_template.py
-│   │   │   │   ├── knn.py
-│   │   │   │   └── Social_Network_Ads.csv
+│   │   │   │   └── knn.py
 │   │   │   └── __MACOSX
 │   │   │       └── K_Nearest_Neighbors
 │   │   ├── P14-LDA
 │   │   │   ├── LDA
-│   │   │   │   ├── lda.py
-│   │   │   │   └── Wine.csv
+│   │   │   │   └── lda.py
 │   │   │   └── __MACOSX
 │   │   │       └── LDA
 │   │   ├── P14-Logistic-Regression
 │   │   │   ├── Logistic_Regression
-│   │   │   │   ├── logistic_regression.py
-│   │   │   │   └── Social_Network_Ads.csv
+│   │   │   │   └── logistic_regression.py
 │   │   │   └── __MACOSX
 │   │   │       └── Logistic_Regression
 │   │   ├── P14-Model-Selection
@@ -330,13 +299,11 @@
 │   │   │   │   └── Model_Selection
 │   │   │   └── Model_Selection
 │   │   │       ├── grid_search.py
-│   │   │       ├── k_fold_cross_validation.py
-│   │   │       └── Social_Network_Ads.csv
+│   │   │       └── k_fold_cross_validation.py
 │   │   ├── P14-Multiple-Linear-Regression
 │   │   │   ├── __MACOSX
 │   │   │   │   └── Multiple_Linear_Regression
 │   │   │   └── Multiple_Linear_Regression
-│   │   │       ├── 50_Startups.csv
 │   │   │       ├── data_preprocessing_template.py
 │   │   │       └── multiple_linear_regression.py
 │   │   ├── P14-Naive-Bayes
@@ -344,8 +311,7 @@
 │   │   │   │   └── Naive_Bayes
 │   │   │   └── Naive_Bayes
 │   │   │       ├── classification_template.py
-│   │   │       ├── naive_bayes.py
-│   │   │       └── Social_Network_Ads.csv
+│   │   │       └── naive_bayes.py
 │   │   ├── P14-Natural-Language-Processing
 │   │   │   ├── __MACOSX
 │   │   │   │   └── Natural_Language_Processing
@@ -356,27 +322,23 @@
 │   │   │   ├── __MACOSX
 │   │   │   │   └── PCA
 │   │   │   └── PCA
-│   │   │       ├── pca.py
-│   │   │       └── Wine.csv
+│   │   │       └── pca.py
 │   │   ├── P14-Polynomial-Regression
 │   │   │   ├── __MACOSX
 │   │   │   │   └── Polynomial_Regression
 │   │   │   └── Polynomial_Regression
 │   │   │       ├── data_preprocessing_template.py
-│   │   │       ├── polynomial_regression.py
-│   │   │       └── Position_Salaries.csv
+│   │   │       └── polynomial_regression.py
 │   │   ├── P14-Random-Forest-Classification
 │   │   │   ├── __MACOSX
 │   │   │   │   └── Random_Forest_Classification
 │   │   │   └── Random_Forest_Classification
 │   │   │       ├── classification_template.py
-│   │   │       ├── random_forest_classification.py
-│   │   │       └── Social_Network_Ads.csv
+│   │   │       └── random_forest_classification.py
 │   │   ├── P14-Random-Forest-Regression
 │   │   │   ├── __MACOSX
 │   │   │   │   └── Random_Forest_Regression
 │   │   │   └── Random_Forest_Regression
-│   │   │       ├── Position_Salaries.csv
 │   │   │       ├── random_forest_regression.py
 │   │   │       └── regression_template.py
 │   │   ├── P14-Regression-Pros-Cons.pdf
@@ -391,46 +353,38 @@
 │   │   │   │   └── Simple_Linear_Regression
 │   │   │   └── Simple_Linear_Regression
 │   │   │       ├── data_preprocessing_template.py
-│   │   │       ├── Salary_Data.csv
 │   │   │       └── simple_linear_regression.py
 │   │   ├── P14-SVM
 │   │   │   ├── __MACOSX
 │   │   │   │   └── SVM
 │   │   │   └── SVM
 │   │   │       ├── classification_template.py
-│   │   │       ├── Social_Network_Ads.csv
 │   │   │       └── svm.py
 │   │   ├── P14-SVR
 │   │   │   ├── __MACOSX
 │   │   │   │   └── SVR
 │   │   │   └── SVR
-│   │   │       ├── Position_Salaries.csv
 │   │   │       ├── regression_template.py
 │   │   │       └── svr.py
 │   │   ├── P14-Thompson-Sampling
 │   │   │   ├── __MACOSX
 │   │   │   │   └── Thompson_Sampling
 │   │   │   └── Thompson_Sampling
-│   │   │       ├── Ads_CTR_Optimisation.csv
 │   │   │       ├── random_selection.py
 │   │   │       └── thompson_sampling.py
 │   │   ├── P14-UCB
 │   │   │   ├── __MACOSX
 │   │   │   │   └── UCB
 │   │   │   └── UCB
-│   │   │       ├── Ads_CTR_Optimisation.csv
 │   │   │       ├── random_selection.py
 │   │   │       └── upper_confidence_bound.py
 │   │   └── P14-XGBoost
 │   │       ├── __MACOSX
 │   │       │   └── XGBoost
 │   │       └── XGBoost
-│   │           ├── Churn_Modelling.csv
 │   │           └── xgboost.py
 │   ├── nano_dl
 │   │   ├── Bike-Sharing-Dataset
-│   │   │   ├── day.csv
-│   │   │   ├── hour.csv
 │   │   │   └── Readme.txt
 │   │   └── deep-learning
 │   │       ├── autoencoder
@@ -469,8 +423,6 @@
 │   │       ├── first-neural-network
 │   │       │   ├── assets
 │   │       │   ├── Bike-Sharing-Dataset
-│   │       │   │   ├── day.csv
-│   │       │   │   ├── hour.csv
 │   │       │   │   └── Readme.txt
 │   │       │   ├── my_answers.py
 │   │       │   ├── requirements.txt
@@ -481,7 +433,6 @@
 │   │       │   ├── Intro_to_GANs_Exercises.ipynb
 │   │       │   └── Intro_to_GANs_Solution.ipynb
 │   │       ├── gradient-descent
-│   │       │   ├── data.csv
 │   │       │   ├── GradientDescent.ipynb
 │   │       │   └── GradientDescentSolutions.ipynb
 │   │       ├── image-classification
@@ -526,7 +477,6 @@
 │   │       │   └── problem_unittests.py
 │   │       ├── LICENSE
 │   │       ├── linear-regression
-│   │       │   ├── bmi_and_life_expectancy.csv
 │   │       │   ├── Regression.ipynb
 │   │       │   └── RegressionSolutions.ipynb
 │   │       ├── README.md
@@ -561,11 +511,9 @@
 │   │       │   └── sequence_to_sequence_implementation.ipynb
 │   │       ├── student-admissions
 │   │       │   ├── StudentAdmissions.ipynb
-│   │       │   ├── StudentAdmissionsSolutions.ipynb
-│   │       │   └── student_data.csv
+│   │       │   └── StudentAdmissionsSolutions.ipynb
 │   │       ├── student-admissions-keras
-│   │       │   ├── StudentAdmissionsKeras.ipynb
-│   │       │   └── student_data.csv
+│   │       │   └── StudentAdmissionsKeras.ipynb
 │   │       ├── tensorboard
 │   │       │   ├── Anna_KaRNNa_Hyperparameters.ipynb
 │   │       │   ├── Anna_KaRNNa.ipynb
@@ -613,34 +561,18 @@
 │   ├── Pandas-Exercises
 │   ├── Python
 │   ├── python_data_science_handbook
-│   │   ├── BicycleWeather.csv
-│   │   ├── births.csv
-│   │   ├── california_cities.csv
-│   │   ├── president_heights.csv
-│   │   ├── Seattle2014.csv
-│   │   ├── state-abbrevs.csv
-│   │   ├── state-areas.csv
-│   │   └── state-population.csv
 │   ├── python_for_data_analysis_2nd_edition
 │   ├── python-for-finance-investment-fundamentals-udm
 │   │   ├── 10. Advanced Python tools
 │   │   ├── 11. PART II FINANCE Calculating and Comparing Rates of Return in Python
-│   │   │   ├── 14.2 Indices_Data_1.csv.csv
-│   │   │   └── 14.3 Indices_Data_2.csv.csv
 │   │   ├── 12. PART II Finance Measuring Investment Risk
 │   │   ├── 13. PART II Finance - Using Regressions for Financial Analysis
 │   │   │   ├── 1.2 Housing Data.xlsx.xlsx
 │   │   │   ├── 3.2 Housing.xlsx.xlsx
 │   │   │   └── 6.2 Housing.xlsx.xlsx
 │   │   ├── 14. PART II Finance - Markowitz Portfolio Optimization
-│   │   │   ├── 1.2 14. Markowitz Efficient frontier.xlsx.xlsx
-│   │   │   ├── 3.1 Markowitz_Data.csv.csv
-│   │   │   ├── 4.2 Markowitz_Data.csv.csv
-│   │   │   └── 5.2 Markowitz_Data.csv.csv
+│   │   │   └── 1.2 14. Markowitz Efficient frontier.xlsx.xlsx
 │   │   ├── 15. Part II Finance - The Capital Asset Pricing Model
-│   │   │   ├── 11.2 CAPM_Data.csv.csv
-│   │   │   ├── 5.1 CAPM_Data.csv.csv
-│   │   │   └── 8.2 CAPM_Data.csv.csv
 │   │   ├── 16. Part II Finance Multivariate regression analysis
 │   │   │   └── 3.2 Housing.xlsx.xlsx
 │   │   ├── 17. PART II Finance - Monte Carlo simulations as a decision-making tool
@@ -656,9 +588,7 @@
 │   │   └── 9. Using Iterations in Python
 │   ├── Python-for-Finance-Repo-master
 │   │   ├── AAPL_CLOSE
-│   │   ├── airline_passengers.csv
 │   │   ├── AMZN_CLOSE
-│   │   ├── banklist.csv
 │   │   ├── CISCO_CLOSE
 │   │   ├── df1
 │   │   ├── df2
@@ -666,53 +596,34 @@
 │   │   ├── environment.yml
 │   │   ├── example
 │   │   ├── Excel_Sample.xlsx
-│   │   ├── Ford_Stock.csv
-│   │   ├── GM_Stock.csv
 │   │   ├── GOOG_CLOSE
 │   │   ├── IBM_CLOSE
 │   │   ├── maclinuxenvironment.yml
-│   │   ├── mcdonalds.csv
-│   │   ├── monthly-milk-production-pounds-p.csv
 │   │   ├── multi_index_example
-│   │   ├── README.md
-│   │   ├── Tesla_Stock.csv
-│   │   └── walmart_stock.csv
+│   │   └── README.md
 │   ├── tableau10-az-udm
 │   │   ├── P1-Airline-Comparison.xlsx
 │   │   ├── P1-AmazingMartEU2.xlsx
 │   │   ├── P1-Long-Term-Unemployment-Statistics.xlsx
 │   │   ├── P1-nyc-park-crime-stats-q1-2018.pdf
 │   │   ├── P1-NYC-Parks-and-Public-Spaces-Spatial-Files.zip
-│   │   ├── P1-OfficeSupplies.csv
-│   │   ├── P1-OfficeSupplies-MAC.csv
 │   │   ├── P1-OfficeSupplies.xlsx
 │   │   ├── P1-PersonalVehicleSalesGlobal.xlsx
-│   │   ├── P1-quarterly-census-of-employment-and-wages-annual-data-beginning-2000.csv
 │   │   ├── P1-Section-9-Challenge-II.pdf
 │   │   ├── P1-Section-9-Challenge-I.pdf
 │   │   ├── P1-StartupExpansion.xlsx
 │   │   ├── P1-SuperStoreUS-2015.xlsx
-│   │   ├── P1-Tableau-Course-Conclusion.pptx
-│   │   ├── P1-UK-Bank-Customers.csv
-│   │   └── P1-US-Cities-Population.csv
+│   │   └── P1-Tableau-Course-Conclusion.pptx
 │   └── udm_python_for_financial_investment
 │       ├── 11. PART II FINANCE Calculating and Comparing Rates of Return in Python
-│       │   ├── 14.2 Indices_Data_1.csv.csv
-│       │   └── 14.3 Indices_Data_2.csv.csv
 │       ├── 12. PART II Finance Measuring Investment Risk
 │       ├── 13. PART II Finance - Using Regressions for Financial Analysis
 │       │   ├── 1.2 Housing Data.xlsx.xlsx
 │       │   ├── 3.2 Housing.xlsx.xlsx
 │       │   └── 6.2 Housing.xlsx.xlsx
 │       ├── 14. PART II Finance - Markowitz Portfolio Optimization
-│       │   ├── 1.2 14. Markowitz Efficient frontier.xlsx.xlsx
-│       │   ├── 3.1 Markowitz_Data.csv.csv
-│       │   ├── 4.2 Markowitz_Data.csv.csv
-│       │   └── 5.2 Markowitz_Data.csv.csv
+│       │   └── 1.2 14. Markowitz Efficient frontier.xlsx.xlsx
 │       ├── 15. Part II Finance - The Capital Asset Pricing Model
-│       │   ├── 11.2 CAPM_Data.csv.csv
-│       │   ├── 5.1 CAPM_Data.csv.csv
-│       │   └── 8.2 CAPM_Data.csv.csv
 │       ├── 16. Part II Finance Multivariate regression analysis
 │       │   └── 3.2 Housing.xlsx.xlsx
 │       └── 17. PART II Finance - Monte Carlo simulations as a decision-making tool
@@ -756,7 +667,6 @@
 │   ├── changes_in_2nd_edition.md
 │   ├── datasets
 │   │   ├── housing
-│   │   │   ├── housing.csv
 │   │   │   ├── housing.tgz
 │   │   │   └── README.md
 │   │   ├── inception
@@ -765,8 +675,6 @@
 │   │   │   ├── jsb_chorales.tgz
 │   │   │   └── README.md
 │   │   └── lifesat
-│   │       ├── gdp_per_capita.csv
-│   │       ├── oecd_bli_2015.csv
 │   │       └── README.md
 │   ├── environment-windows.yml
 │   ├── environment.yml
@@ -877,4 +785,4 @@
     └── Natural Language Processing 
         └── input.txt
 
-407 directories, 470 files
+407 directories, 378 files
