@@ -7,3 +7,6 @@ datasets/nano_dl/*
 datasets/nano_dl/**
 example_work/*
 example_work/**
+sql/datasets/*
+sql/datasets/**
+sql/datasets/
