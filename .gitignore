@@ -10,3 +10,8 @@ example_work/**
 sql/datasets/*
 sql/datasets/**
 sql/datasets/
+datasets/Practical-Deep-Learning-Book
+datasets/Practical-Deep-Learning-Book
+*.jpg
+*.h5
+"deep learning/nano-dl/aind2-cnn/*"
