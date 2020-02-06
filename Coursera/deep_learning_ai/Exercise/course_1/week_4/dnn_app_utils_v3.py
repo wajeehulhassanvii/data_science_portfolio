@@ -23,8 +23,10 @@ def sigmoid(Z):
 def relu(Z):
     """
     Implement the RELU function.
+
     Arguments:
     Z -- Output of the linear layer, of any shape
+
     Returns:
     A -- Post-activation parameter, of the same shape as Z
     cache -- a python dictionary containing "A" ; stored for computing the backward pass efficiently
@@ -41,9 +43,11 @@ def relu(Z):
 def relu_backward(dA, cache):
     """
     Implement the backward propagation for a single RELU unit.
+
     Arguments:
     dA -- post-activation gradient, of any shape
     cache -- 'Z' where we store for computing backward propagation efficiently
+
     Returns:
     dZ -- Gradient of the cost with respect to Z
     """
@@ -61,9 +65,11 @@ def relu_backward(dA, cache):
 def sigmoid_backward(dA, cache):
     """
     Implement the backward propagation for a single SIGMOID unit.
+
     Arguments:
     dA -- post-activation gradient, of any shape
     cache -- 'Z' where we store for computing backward propagation efficiently
+
     Returns:
     dZ -- Gradient of the cost with respect to Z
     """
@@ -158,10 +164,12 @@ def initialize_parameters_deep(layer_dims):
 def linear_forward(A, W, b):
     """
     Implement the linear part of a layer's forward propagation.
+
     Arguments:
     A -- activations from previous layer (or input data): (size of previous layer, number of examples)
     W -- weights matrix: numpy array of shape (size of current layer, size of previous layer)
     b -- bias vector, numpy array of shape (size of the current layer, 1)
+
     Returns:
     Z -- the input of the activation function, also called pre-activation parameter 
     cache -- a python dictionary containing "A", "W" and "b" ; stored for computing the backward pass efficiently
@@ -177,11 +185,13 @@ def linear_forward(A, W, b):
 def linear_activation_forward(A_prev, W, b, activation):
     """
     Implement the forward propagation for the LINEAR->ACTIVATION layer
+
     Arguments:
     A_prev -- activations from previous layer (or input data): (size of previous layer, number of examples)
     W -- weights matrix: numpy array of shape (size of current layer, size of previous layer)
     b -- bias vector, numpy array of shape (size of the current layer, 1)
     activation -- the activation to be used in this layer, stored as a text string: "sigmoid" or "relu"
+
     Returns:
     A -- the output of the activation function, also called the post-activation value 
     cache -- a python dictionary containing "linear_cache" and "activation_cache";
@@ -239,9 +249,11 @@ def L_model_forward(X, parameters):
 def compute_cost(AL, Y):
     """
     Implement the cost function defined by equation (7).
+
     Arguments:
     AL -- probability vector corresponding to your label predictions, shape (1, number of examples)
     Y -- true "label" vector (for example: containing 0 if non-cat, 1 if cat), shape (1, number of examples)
+
     Returns:
     cost -- cross-entropy cost
     """
@@ -259,9 +271,11 @@ def compute_cost(AL, Y):
 def linear_backward(dZ, cache):
     """
     Implement the linear portion of backward propagation for a single layer (layer l)
+
     Arguments:
     dZ -- Gradient of the cost with respect to the linear output (of current layer l)
     cache -- tuple of values (A_prev, W, b) coming from the forward propagation in the current layer
+
     Returns:
     dA_prev -- Gradient of the cost with respect to the activation (of the previous layer l-1), same shape as A_prev
     dW -- Gradient of the cost with respect to W (current layer l), same shape as W
