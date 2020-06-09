@@ -1,3 +1,0 @@
-"""
-week2-Emojify
-"""

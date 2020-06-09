@@ -1,3 +1,0 @@
-"""
-Convolutional Neural Networks: Application
-"""
