@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  spark:
+    image: jupyter/pyspark-notebook
+    ports:
+      - "8888:8888"
+      - "4040-4080:4040-4080"
+    volumes:
+      - ../notebooks:/home/jovyan/projects/spark-nlp/notebooks/
+      - ../datasets:/home/jovyan/projects/spark-nlp/datasets/
+    # below first we wait_for_db then run the app
+    # we will also have to migrate our database before
+    # starting the app

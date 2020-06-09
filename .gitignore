@@ -5,6 +5,9 @@ datasets/deep_learning_a-z/*
 datasets/deep_learning_a-z/**
 datasets/nano_dl/*
 datasets/nano_dl/**
+datasets/
+datasets/*
+datasets/**
 example_work/*
 example_work/**
 sql/datasets/*
