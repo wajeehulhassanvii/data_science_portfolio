@@ -8,6 +8,9 @@ datasets/nano_dl/**
 datasets/
 datasets/*
 datasets/**
+!notebooks/*.ipynb
+!*.yml
+!*.xml
 example_work/*
 example_work/**
 sql/datasets/*
