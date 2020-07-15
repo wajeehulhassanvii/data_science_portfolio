@@ -1,0 +1,15 @@
+artifact_uri: file:///home/wajeeh-machine/projects/data_science_portfolio/machine_learning_pipeline/notebooks/mlruns/0/05b7da73c9b940e59d5e8626026dc3da/artifacts
+end_time: 1594836007477
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 05b7da73c9b940e59d5e8626026dc3da
+run_uuid: 05b7da73c9b940e59d5e8626026dc3da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1594835996798
+status: 4
+tags: []
+user_id: wajeeh-machine
